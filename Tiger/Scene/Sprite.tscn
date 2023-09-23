@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cn58xaxqo0u5o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(274, 148)
+region_enabled = true

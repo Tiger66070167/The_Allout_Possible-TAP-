@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj7da55ku77tp"]
+
+[ext_resource type="Script" path="res://Tiger/Script/Chip_test.gd" id="1_tbe47"]
+[ext_resource type="Texture2D" uid="uid://dsqt3fkwix2g4" path="res://icon.svg" id="2_5b68f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psxoa"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tbe47")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_5b68f")
+
+[node name="Area2D" type="Area2D" parent="Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
+shape = SubResource("RectangleShape2D_psxoa")
+
+[connection signal="input_event" from="Icon/Area2D" to="." method="_on_area_2d_input_event"]
