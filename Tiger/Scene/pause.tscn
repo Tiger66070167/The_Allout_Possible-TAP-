@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi5xca6bg3cy6"]
+
+[ext_resource type="Script" path="res://Tiger/Script/Pause.gd" id="1_djs05"]
+
+[node name="Pause" type="CanvasLayer"]
+layer = 100
+
+[node name="Pause" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_djs05")
+
+[node name="BG Pause" type="ColorRect" parent="Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.027451, 0.101961, 0.137255, 0.282353)
+
+[node name="CenterContainer" type="CenterContainer" parent="Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Pause/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+uppercase = true
+
+[node name="Resume" type="Button" parent="Pause/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="Pause/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/Resume" to="Pause" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/Quit" to="Pause" method="_on_quit_pressed"]

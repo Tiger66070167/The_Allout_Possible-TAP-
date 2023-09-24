@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi5xca6bg3cy6"]
+
+[ext_resource type="Script" path="res://Script/Pause.gd" id="1_2bs24"]
+
+[node name="Pause" type="CanvasLayer"]
+layer = 100
+
+[node name="Pause" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2bs24")
+
+[node name="BG Pause" type="ColorRect" parent="Pause"]
+visible = false
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 651.0
+color = Color(0.027451, 0.101961, 0.137255, 0.282353)
