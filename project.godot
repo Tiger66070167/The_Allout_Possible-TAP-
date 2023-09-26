@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="The Allout Possible-tap-"
-run/main_scene="res://Tiger/Scene/sceen_game.tscn"
+run/main_scene="res://Don/Parallax_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://Globals/globals.gd"
+
+[display]
+
+window/size/mode=3
 
 [input]
 
