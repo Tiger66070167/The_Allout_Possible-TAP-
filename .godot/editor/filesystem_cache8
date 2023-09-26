@@ -1,15 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695700729
+::res://::1695705229
 icon.svg::CompressedTexture2D::6510667064270084457::1695700187::1695700187::1::::<><>::
 README.md::TextFile::-1::1695700186::0::1::::<><>::
 ::res://Aom/::1695700185
-::res://Don/::1695698842
-Parallax.tscn::PackedScene::4173569922097312951::1695698842::0::1::::<><>::uid://dftgnw6a3rnr7::::res://Don/Asset/Characters/Player/Cyborg_idle.png<>res://Don/Script/Parallax_scene.gd<>uid://c53fpal1sl0ys::::res://Don/Scene/pause.tscn
-::res://Don/Asset/::1695697864
-::res://Don/Asset/Characters/::1695697867
-::res://Don/Asset/Characters/Player/::1695697867
-Cyborg_idle.png::CompressedTexture2D::7549818167314704542::1695697559::1695700733::1::::<><>::
-::res://Don/Asset/UI/::1695697875
+::res://Don/::1695705334
+Parallax_scene.tscn::PackedScene::4173569922097312951::1695705334::0::1::::<><>::res://Don/Script/Parallax_scene.gd<>uid://dftgnw6a3rnr7::::res://Don/Asset/Player/Cyborg_idle.png<>uid://ctlovuteewp3x::::res://Don/Scene/parallax_background.tscn<>res://Don/Script/Player.gd<>uid://pbbtfs8dkp14::::res://Don/Asset/Player/Cyborg_run.png<>uid://c53fpal1sl0ys::::res://Don/Scene/pause.tscn
+::res://Don/Asset/::1695704909
+::res://Don/Asset/Background/::1695705554
+back.png::CompressedTexture2D::2577734416219632515::1695705554::1695705555::1::::<><>::
+foreground-empty.png::CompressedTexture2D::2421883978319534684::1695705554::1695705555::1::::<><>::
+middle.png::CompressedTexture2D::5230304685484442458::1695705554::1695705555::1::::<><>::
+::res://Don/Asset/Player/::1695702895
+Cyborg_idle.png::CompressedTexture2D::7549818167314704542::1695697559::1695702885::1::::<><>::
+Cyborg_run.png::CompressedTexture2D::1054991971328524525::1695702892::1695702895::1::::<><>::
+::res://Don/Asset/UI/::1695700733
 00.png::CompressedTexture2D::5787804127070612438::1695697875::1695700733::1::::<><>::
 01.png::CompressedTexture2D::5044700243611383459::1695697875::1695700733::1::::<><>::
 02.png::CompressedTexture2D::8517266013290209391::1695697875::1695700733::1::::<><>::
@@ -19,13 +23,17 @@ Cyborg_idle.png::CompressedTexture2D::7549818167314704542::1695697559::169570073
 06.png::CompressedTexture2D::4046540281258270549::1695697875::1695700733::1::::<><>::
 07.png::CompressedTexture2D::8238091864201808643::1695697875::1695700733::1::::<><>::
 All.png::CompressedTexture2D::730506108598755108::1695697875::1695700733::1::::<><>::
-::res://Don/Scene/::1695698628
-pause.tscn::PackedScene::6936639643711938846::1695698628::0::1::::<><>::
-::res://Don/Script/::1695698842
-Parallax_scene.gd::GDScript::-1::1695698842::0::1::::<>Node2D<>::
+::res://Don/Scene/::1695705407
+pause.tscn::PackedScene::6936639643711938846::1695702128::0::1::::<><>::res://Don/Script/Pause_Menu.gd
+parallax_background.tscn::PackedScene::6130026171380465083::1695705407::0::1::::<><>::uid://b6relkysj5ess::::res://Don/Asset/Background/4.png<>uid://bt8bxv6njb3at::::res://Don/Asset/Background/2.png<>uid://bl72dj3q4v1k7::::res://Don/Asset/Background/3.png
+::res://Don/Script/::1695704411
+Parallax_scene.gd::GDScript::-1::1695701781::0::1::::<>Node2D<>::
+Pause_Menu.gd::GDScript::-1::1695702126::0::1::::<>Control<>::
+Player.gd::GDScript::-1::1695704411::0::1::::<>CharacterBody2D<>::
 ::res://Globals/::1695700186
 globals.gd::GDScript::-1::1695700186::0::1::::<>Node<>::
-::res://Main Scene/::1695700186
+::res://Main Scene/::1695702879
+Cyborg_run.png::CompressedTexture2D::7070195624728542690::1695702879::1695702879::1::::<><>::
 Game.tscn::PackedScene::8677291834240815909::1695700186::0::1::::<><>::
 ::res://Tiger/::1695700187
 ::res://Tiger/Asset/::1695700186
@@ -295,11 +303,11 @@ All.png::CompressedTexture2D::1346637974495315182::1695700186::1695700186::1::::
 ::res://Tiger/Asset/Sprite ready to use/::1695700186
 Full health.png::CompressedTexture2D::4978117099546491860::1695700186::1695700186::1::::<><>::
 ::res://Tiger/Scene/::1695700187
-Chip_test.tscn::PackedScene::3084364138070617877::1695700187::0::1::::<><>::res://Tiger/Script/Chip_test.gd<>uid://dsqt3fkwix2g4::::res://icon.svg
+Chip_test.tscn::PackedScene::3084364138070617877::1695700187::0::1::::<><>::res://Tiger/Script/Chip_test.gd<>uid://dsqt3fkwix2g4
 pause.tscn::PackedScene::3011262875784085879::1695700187::0::1::::<><>::res://Tiger/Script/Pause.gd
-sceen_game.tscn::PackedScene::1752321641721343644::1695700187::0::1::::<><>::res://Tiger/Script/sceen_game.gd<>uid://c1a8rcgskijgp::::res://Tiger/Asset/graphics/player/player.png<>uid://bi5xca6bg3cy6::::res://Tiger/Scene/pause.tscn<>res://Tiger/Script/Player.gd<>uid://brfjw7g6vp6th::::res://Tiger/Scene/ui.tscn
+sceen_game.tscn::PackedScene::1752321641721343644::1695700187::0::1::::<><>::res://Tiger/Script/sceen_game.gd<>uid://c1a8rcgskijgp
 Sprite.tscn::PackedScene::5749272437600706114::1695700187::0::1::::<><>::
-ui.tscn::PackedScene::3590540346163974705::1695700187::0::1::::<><>::res://Tiger/Script/ui.gd<>uid://dlmafnk5h1emo::::res://Tiger/Asset/Hologram Interface Wenrexa/Card X3/Card X5.png<>uid://bbs0j40opbmaq::::res://Tiger/Asset/etc/06BG.png<>uid://ja1nfb6ywl3i::::res://Tiger/Asset/etc/06.png
+ui.tscn::PackedScene::3590540346163974705::1695700187::0::1::::<><>::res://Tiger/Script/ui.gd<>uid://dlmafnk5h1emo
 ::res://Tiger/Script/::1695700187
 Chip_test.gd::GDScript::-1::1695700187::0::1::::<>Node2D<>::
 Drag N Drop.gd::GDScript::-1::1695700187::0::1::::<>Node2D<>::

@@ -1,12 +1,15 @@
-ParallaxLayer
 Sprite2D
+ParallaxLayer
 ParallaxBackground
-CenterContainer
-VBoxContainer
-Label
+CollisionShape2D
+CharacterBody2D
 Button
+HBoxContainer
+VBoxContainer
 ColorRect
+CenterContainer
 Control
+Label
 ReferenceRect
 MarginContainer
 CanvasLayer
@@ -15,5 +18,4 @@ Panel
 Node2D
 Camera2D
 AnimatedSprite2D
-CharacterBody2D
 Node

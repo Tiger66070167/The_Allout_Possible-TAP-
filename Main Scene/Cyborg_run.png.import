@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dftgnw6a3rnr7"
-path="res://.godot/imported/Cyborg_idle.png-4cf17dbb53798ebf762cf9d1ce3e2a7b.ctex"
+uid="uid://c7y4da353xrda"
+path="res://.godot/imported/Cyborg_run.png-8121ba8d0af77ba63b8e770414bb9e03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Don/Asset/Characters/Player/Cyborg_idle.png"
-dest_files=["res://.godot/imported/Cyborg_idle.png-4cf17dbb53798ebf762cf9d1ce3e2a7b.ctex"]
+source_file="res://Main Scene/Cyborg_run.png"
+dest_files=["res://.godot/imported/Cyborg_run.png-8121ba8d0af77ba63b8e770414bb9e03.ctex"]
 
 [params]
 
