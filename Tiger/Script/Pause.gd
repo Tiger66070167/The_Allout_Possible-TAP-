@@ -3,7 +3,7 @@ extends Control
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("Pause"):
+	if event.is_action_pressed("ESC"):
 		self.is_paused = !is_paused
 
 
