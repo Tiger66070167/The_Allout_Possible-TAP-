@@ -136,32 +136,15 @@ grow_vertical = 2
 [node name="ColorRect" type="ColorRect" parent="Lower_scene/Control_panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.001
 anchor_top = 0.008
 anchor_right = 1.0
-anchor_bottom = 1.02
-offset_left = -4.917
+anchor_bottom = 1.0
+offset_left = -17.0
 offset_top = -3.048
-offset_right = 4.0
-offset_bottom = -10.1201
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.411765, 0.396078, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="Lower_scene/Control_panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.001
-anchor_bottom = 1.0
-offset_left = -3.0
-offset_right = 0.0828857
-offset_bottom = 1.99994
-
-[node name="Button" type="Button" parent="Lower_scene/Control_panel/CenterContainer"]
-layout_mode = 2
-toggle_mode = true
-action_mode = 0
-text = "Run"
 
 [node name="Pause_Menu" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -170,5 +153,3 @@ visible = false
 [node name="Pause" parent="Pause_Menu" instance=ExtResource("3_hiekw")]
 offset_right = 0.0
 offset_bottom = 0.0
-
-[connection signal="button_down" from="Lower_scene/Control_panel/CenterContainer/Button" to="." method="_on_button_button_down"]
