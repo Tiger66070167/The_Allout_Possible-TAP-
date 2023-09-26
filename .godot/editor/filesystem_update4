@@ -1,1 +1,4 @@
-res://Don/Parallax_scene.tscn
+res://Tiger/Scene/sceen_game.tscn
+res://Tiger/Scene/ui.tscn
+res://Tiger/Scene/inventory.tscn
+res://Tiger/Script/Slot.gd
