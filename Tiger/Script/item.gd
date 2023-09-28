@@ -1,7 +1,7 @@
 extends TextureRect
-class_name Items
+class_name InventoryItems
 
-enum Type {Chip, Empty}
+enum Type {Chip, Item,  Empty}
 @export var type:Type
 
 func get_iteam(small_icon:Type, how_like:Texture2D) -> void:

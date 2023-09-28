@@ -1,19 +1,19 @@
 extends TextureRect
 
-@export var type: Items.Type
+@export var type: InventoryItems.Type
 
-func set_size_icon(i: Items.Type, cms: Vector2) -> void:
+func set_size_icon(i: InventoryItems.Type, cms: Vector2) -> void:
 	type = i
 	custom_minimum_size = cms
 
 #still broken
 func _can_drop_data(at_position: Vector2, data:Variant) -> bool:
-	if data is Items:
-		if type == Items.Type.Empty:
+	if data is InventoryItems:
+		if type == InventoryItems.Type.Empty:
 			if get_child_count() == 0:
 				return true
 			else:
-				return get_child(0).type == data.type
+				return false
 		else:
 			return data.type == type
 	return false

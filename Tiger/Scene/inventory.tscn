@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://0qo0n2im6s3e"]
+[gd_scene load_steps=8 format=3 uid="uid://0qo0n2im6s3e"]
 
 [ext_resource type="Texture2D" uid="uid://b8an6tehroj4i" path="res://Tiger/Asset/Game UI collection FREE version/Elements-01.png" id="1_1pymt"]
 [ext_resource type="Texture2D" uid="uid://byq25638oiqql" path="res://Tiger/Asset/etc/Elements-01.png" id="2_q4x6j"]
 [ext_resource type="Script" path="res://Tiger/Script/Slot.gd" id="3_ky7qe"]
 [ext_resource type="Texture2D" uid="uid://odejdid8y8lw" path="res://Tiger/Asset/etc/icon-01.png" id="4_bnbbe"]
 [ext_resource type="Script" path="res://Tiger/Script/item.gd" id="5_mr1nb"]
+[ext_resource type="PackedScene" uid="uid://bi5xca6bg3cy6" path="res://Tiger/Scene/pause.tscn" id="6_50gbg"]
+[ext_resource type="Texture2D" uid="uid://cy020ablq8so4" path="res://icon.svg" id="6_r2x4n"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -63,12 +65,33 @@ layout_mode = 2
 texture = ExtResource("2_q4x6j")
 expand_mode = 3
 stretch_mode = 4
+script = ExtResource("3_ky7qe")
+type = 1
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D/VBoxContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 2.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_r2x4n")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("5_mr1nb")
+type = 1
 
 [node name="TextureRect3" type="TextureRect" parent="Sprite2D/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_q4x6j")
 expand_mode = 3
 stretch_mode = 4
+script = ExtResource("3_ky7qe")
+type = 2
 
 [node name="TextureRect4" type="TextureRect" parent="Sprite2D/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -76,7 +99,7 @@ texture = ExtResource("2_q4x6j")
 expand_mode = 3
 stretch_mode = 4
 script = ExtResource("3_ky7qe")
-type = 1
+type = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Sprite2D/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
@@ -95,3 +118,6 @@ texture = ExtResource("2_q4x6j")
 expand_mode = 3
 stretch_mode = 4
 script = ExtResource("3_ky7qe")
+type = 1
+
+[node name="Pause" parent="." instance=ExtResource("6_50gbg")]

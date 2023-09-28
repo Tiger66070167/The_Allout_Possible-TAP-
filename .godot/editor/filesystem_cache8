@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695735705
+::res://::1695906051
 icon.svg::CompressedTexture2D::6510667064270084457::1695697364::1695697364::1::::<><>::
 README.md::TextFile::-1::1695697364::0::1::::<><>::
 ::res://Aom/::1695697363
@@ -313,20 +313,20 @@ Card X6.png::CompressedTexture2D::4568867703683475633::1695697364::1695697364::1
 All.png::CompressedTexture2D::1346637974495315182::1695697364::1695697364::1::::<><>::
 ::res://Tiger/Asset/Sprite ready to use/::1695697364
 Full health.png::CompressedTexture2D::4978117099546491860::1695697364::1695697364::1::::<><>::
-::res://Tiger/Scene/::1695735676
+::res://Tiger/Scene/::1695905877
 Chip_test.tscn::PackedScene::3084364138070617877::1695697364::0::1::::<><>::res://Tiger/Script/Chip_test.gd<>uid://dsqt3fkwix2g4
-inventory.tscn::PackedScene::1788646542656149628::1695735676::0::1::::<><>::uid://b8an6tehroj4i::::res://Tiger/Asset/Game UI collection FREE version/Elements-01.png<>uid://byq25638oiqql::::res://Tiger/Asset/etc/Elements-01.png<>res://Tiger/Script/Slot.gd<>uid://odejdid8y8lw::::res://Tiger/Asset/etc/icon-01.png<>res://Tiger/Script/item.gd
-pause.tscn::PackedScene::3011262875784085879::1695697364::0::1::::<><>::res://Tiger/Script/Pause.gd
-sceen_game.tscn::PackedScene::1752321641721343644::1695735676::0::1::::<><>::res://Tiger/Script/sceen_game.gd<>uid://c1a8rcgskijgp::::res://Tiger/Asset/graphics/player/player.png<>uid://bi5xca6bg3cy6::::res://Tiger/Scene/pause.tscn<>res://Tiger/Script/Player.gd<>uid://brfjw7g6vp6th::::res://Tiger/Scene/ui.tscn
+inventory.tscn::PackedScene::1788646542656149628::1695905877::0::1::::<><>::uid://b8an6tehroj4i::::res://Tiger/Asset/Game UI collection FREE version/Elements-01.png<>uid://byq25638oiqql::::res://Tiger/Asset/etc/Elements-01.png<>res://Tiger/Script/Slot.gd<>uid://odejdid8y8lw::::res://Tiger/Asset/etc/icon-01.png<>res://Tiger/Script/item.gd<>uid://bi5xca6bg3cy6::::res://Tiger/Scene/pause.tscn<>uid://cy020ablq8so4::::res://icon.svg
+pause.tscn::PackedScene::3011262875784085879::1695905877::0::1::::<><>::res://Tiger/Script/Pause.gd
+sceen_game.tscn::PackedScene::1752321641721343644::1695905877::0::1::::<><>::res://Tiger/Script/sceen_game.gd<>uid://c1a8rcgskijgp::::res://Tiger/Asset/graphics/player/player.png<>uid://bi5xca6bg3cy6::::res://Tiger/Scene/pause.tscn<>res://Tiger/Script/Player.gd<>uid://brfjw7g6vp6th::::res://Tiger/Scene/ui.tscn
 Sprite.tscn::PackedScene::5749272437600706114::1695697364::0::1::::<><>::
-ui.tscn::PackedScene::3590540346163974705::1695735676::0::1::::<><>::res://Tiger/Script/ui.gd<>uid://b8an6tehroj4i::::res://Tiger/Asset/Game UI collection FREE version/Elements-01.png<>uid://bbs0j40opbmaq::::res://Tiger/Asset/etc/06BG.png<>uid://ja1nfb6ywl3i::::res://Tiger/Asset/etc/06.png
-::res://Tiger/Script/::1695735654
+ui.tscn::PackedScene::3590540346163974705::1695905877::0::1::::<><>::res://Tiger/Script/ui.gd<>uid://b8an6tehroj4i::::res://Tiger/Asset/Game UI collection FREE version/Elements-01.png<>uid://bbs0j40opbmaq::::res://Tiger/Asset/etc/06BG.png<>uid://ja1nfb6ywl3i::::res://Tiger/Asset/etc/06.png
+::res://Tiger/Script/::1695905851
 Chip_test.gd::GDScript::-1::1695697364::0::1::::<>Node2D<>::
 Drag N Drop.gd::GDScript::-1::1695697364::0::1::::<>Node2D<>::
 Icon.gd::GDScript::-1::1695697364::0::1::::<>Sprite2D<>::
-item.gd::GDScript::-1::1695735542::0::1::::Items<>TextureRect<>::
+item.gd::GDScript::-1::1695905845::0::1::::InventoryItems<>TextureRect<>::
 Pause.gd::GDScript::-1::1695697705::0::1::::<>Control<>::
 Player.gd::GDScript::-1::1695697364::0::1::::<>Sprite2D<>::
 sceen_game.gd::GDScript::-1::1695697364::0::1::::<>Node2D<>::
-Slot.gd::GDScript::-1::1695735654::0::1::::<>TextureRect<>::
+Slot.gd::GDScript::-1::1695905851::0::1::::<>TextureRect<>::
 ui.gd::GDScript::-1::1695697364::0::1::::<>CanvasLayer<>::
