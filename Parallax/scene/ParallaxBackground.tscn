@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Parallax/Asset/Background/back.png" type="Texture" id=1]
+[ext_resource path="res://Parallax/scene/ParallaxBackground.gd" type="Script" id=2]
+[ext_resource path="res://Parallax/Asset/Background/middle.png" type="Texture" id=3]
+[ext_resource path="res://Parallax/Asset/Background/foreground-empty.png" type="Texture" id=4]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="Farest" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 2016, 0 )
+
+[node name="9" type="Sprite" parent="Farest"]
+position = Vector2( 1792, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="8" type="Sprite" parent="Farest"]
+position = Vector2( 1568, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="7" type="Sprite" parent="Farest"]
+position = Vector2( 1344, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="6" type="Sprite" parent="Farest"]
+position = Vector2( 1120, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="5" type="Sprite" parent="Farest"]
+position = Vector2( 896, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="4" type="Sprite" parent="Farest"]
+position = Vector2( 672, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="3" type="Sprite" parent="Farest"]
+position = Vector2( 448, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="2" type="Sprite" parent="Farest"]
+position = Vector2( 224, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="1" type="Sprite" parent="Farest"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Far" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="4" type="Sprite" parent="Far"]
+position = Vector2( 1536, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="3" type="Sprite" parent="Far"]
+position = Vector2( 1024, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="2" type="Sprite" parent="Far"]
+position = Vector2( 512, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="1" type="Sprite" parent="Far"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Near" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 2752, 0 )
+
+[node name="2" type="Sprite" parent="Near"]
+position = Vector2( 1376, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="1" type="Sprite" parent="Near"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
