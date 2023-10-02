@@ -12,4 +12,4 @@ func _ready():
 
 
 func _process(delta):
-	self.scroll_offset.x -= 40*delta
+	scroll_offset.x -= Globals.Screen_moving_x*delta
