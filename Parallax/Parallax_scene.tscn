@@ -1,93 +1,35 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Parallax/script/Parallax_scene.py" type="Script" id=1]
 [ext_resource path="res://Parallax/scene/ParallaxBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Parallax/scene/Pause_menu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Parallax/script/ParallaxBackground.gd" type="Script" id=4]
-[ext_resource path="res://Parallax/Asset/Player/Cyborg_idle.png" type="Texture" id=5]
-[ext_resource path="res://Parallax/Asset/Player/Cyborg_run.png" type="Texture" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 5 )
-region = Rect2( 48, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 5 )
-region = Rect2( 96, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 5 )
-region = Rect2( 144, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 6 )
-region = Rect2( 48, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 6 )
-region = Rect2( 144, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 6 )
-region = Rect2( 192, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 6 )
-region = Rect2( 240, 0, 48, 48 )
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
-"loop": true,
-"name": "Running",
-"speed": 5.0
-} ]
+[ext_resource path="res://Parallax/script/ParallaxBackground.py" type="Script" id=4]
+[ext_resource path="res://Parallax/Charactor_scene/Drone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Parallax/Charactor_scene/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Parallax/scene/Control_panel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Parallax/script/Fighting_scene.py" type="Script" id=10]
 
 [node name="Parallax_scene" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Upper_scene" type="CanvasLayer" parent="."]
+pause_mode = 1
+
+[node name="Fighting_scene" type="Node2D" parent="Upper_scene"]
+script = ExtResource( 10 )
+
+[node name="Player" parent="Upper_scene/Fighting_scene" instance=ExtResource( 6 )]
+
+[node name="Drone" parent="Upper_scene/Fighting_scene" instance=ExtResource( 5 )]
 
 [node name="ParallaxBackground" parent="Upper_scene" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
 
-[node name="Fighting_scene" type="Node2D" parent="Upper_scene"]
-
-[node name="Player" type="KinematicBody2D" parent="Upper_scene/Fighting_scene"]
-position = Vector2( 309, 446 )
-
-[node name="Player_col" type="CollisionShape2D" parent="Upper_scene/Fighting_scene/Player"]
-shape = SubResource( 1 )
-
-[node name="Player_anim" type="AnimatedSprite" parent="Upper_scene/Fighting_scene/Player"]
-scale = Vector2( 3, 3 )
-frames = SubResource( 6 )
-animation = "Idle"
-frame = 3
-playing = true
-
 [node name="Lower_scene" type="CanvasLayer" parent="."]
 pause_mode = 1
+
+[node name="Control_panel" parent="Lower_scene" instance=ExtResource( 8 )]
 
 [node name="Pause_menu" parent="." instance=ExtResource( 3 )]
 pause_mode = 2

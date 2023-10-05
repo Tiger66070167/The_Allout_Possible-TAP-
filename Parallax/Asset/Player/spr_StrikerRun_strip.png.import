@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cyborg_idle.png-b49712590b4e58d702adbb22549eabc1.stex"
+path="res://.import/spr_StrikerRun_strip.png-5845ac2510617840e493c256f1bc378b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parallax/Asset/Player/Cyborg_idle.png"
-dest_files=[ "res://.import/Cyborg_idle.png-b49712590b4e58d702adbb22549eabc1.stex" ]
+source_file="res://Parallax/Asset/Player/spr_StrikerRun_strip.png"
+dest_files=[ "res://.import/spr_StrikerRun_strip.png-5845ac2510617840e493c256f1bc378b.stex" ]
 
 [params]
 

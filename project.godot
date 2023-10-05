@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Globals="*res://Globals/Global.py"
+Globals="*res://Globals/Globals.py"
 
 [display]
 
@@ -27,6 +27,10 @@ window/size/fullscreen=true
 [gdnative]
 
 singletons=[ "res://pythonscript.gdnlib" ]
+
+[global]
+
+singleton=true
 
 [gui]
 
