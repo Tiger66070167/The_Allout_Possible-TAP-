@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle.png-d4852882ce7532cf43cfbaeacc4c6d27.stex"
+path="res://.import/Fire1.png-6f9a162da0f683094968158cca148452.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parallax/Asset/Enemy/Idle.png"
-dest_files=[ "res://.import/Idle.png-d4852882ce7532cf43cfbaeacc4c6d27.stex" ]
+source_file="res://Parallax/Asset/Enemy/Drone/Fire1.png"
+dest_files=[ "res://.import/Fire1.png-6f9a162da0f683094968158cca148452.stex" ]
 
 [params]
 

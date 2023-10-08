@@ -3,14 +3,14 @@
 [ext_resource path="res://font/m5x7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Parallax/script/Control_panel.py" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
-size = 100
-extra_spacing_top = -15
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=2]
 size = 100
 use_filter = true
+extra_spacing_top = -15
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
 extra_spacing_top = -15
 font_data = ExtResource( 1 )
 
@@ -32,24 +32,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 629.0
+margin_left = 772.0
 margin_top = 234.0
-margin_right = 1290.0
+margin_right = 1148.0
 margin_bottom = 305.0
 custom_constants/separation = 50
 
-[node name="Run_Button" type="Button" parent="CenterContainer/HBoxContainer"]
-margin_right = 126.0
+[node name="Fight_scene_Button" type="Button" parent="CenterContainer/HBoxContainer"]
+margin_right = 376.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 2 )
+text = "Start Fight"
+
+[node name="P_Attack" type="Button" parent="CenterContainer/HBoxContainer"]
+visible = false
+margin_left = 426.0
+margin_right = 792.0
 margin_bottom = 71.0
 size_flags_horizontal = 2
 custom_fonts/font = SubResource( 1 )
-text = "Run"
+text = "Player_ATK"
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer"]
-margin_left = 176.0
-margin_right = 661.0
+[node name="E_Attack" type="Button" parent="CenterContainer/HBoxContainer"]
+visible = false
+margin_left = 426.0
+margin_right = 792.0
 margin_bottom = 71.0
-custom_fonts/font = SubResource( 2 )
-text = "Fighting scene"
+size_flags_horizontal = 2
+custom_fonts/font = SubResource( 1 )
+text = "Enemy_ATK"
 
-[connection signal="pressed" from="CenterContainer/HBoxContainer/Run_Button" to="." method="_on_Run_Button_pressed"]
+[node name="Kill_Enemy" type="Button" parent="CenterContainer/HBoxContainer"]
+visible = false
+margin_left = 426.0
+margin_right = 766.0
+margin_bottom = 71.0
+size_flags_horizontal = 2
+custom_fonts/font = SubResource( 1 )
+text = "Kill Enemy"
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/Fight_scene_Button" to="." method="_on_Fight_scene_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/P_Attack" to="." method="_on_P_Attack_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/E_Attack" to="." method="_on_E_Attack_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/Kill_Enemy" to="." method="_on_Kill_Enemy_pressed"]

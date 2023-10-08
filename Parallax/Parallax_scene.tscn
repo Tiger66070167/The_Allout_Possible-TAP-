@@ -4,8 +4,8 @@
 [ext_resource path="res://Parallax/scene/ParallaxBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Parallax/scene/Pause_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Parallax/script/ParallaxBackground.py" type="Script" id=4]
-[ext_resource path="res://Parallax/Charactor_scene/Drone.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Parallax/Charactor_scene/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Parallax/script/Spawner.gd" type="Script" id=5]
+[ext_resource path="res://Parallax/Character_scene/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Parallax/scene/Control_panel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Parallax/script/Fighting_scene.py" type="Script" id=10]
 
@@ -21,8 +21,6 @@ script = ExtResource( 10 )
 
 [node name="Player" parent="Upper_scene/Fighting_scene" instance=ExtResource( 6 )]
 
-[node name="Drone" parent="Upper_scene/Fighting_scene" instance=ExtResource( 5 )]
-
 [node name="ParallaxBackground" parent="Upper_scene" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
 
@@ -34,3 +32,6 @@ pause_mode = 1
 [node name="Pause_menu" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
 visible = false
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource( 5 )
