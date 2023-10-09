@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "TextureRect",
+"class": "Inventory_Slot",
+"language": "GDScript",
+"path": "res://Inventory/inventory/Invetory_Slot.gd"
+}, {
+"base": "TextureRect",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Inventory/Item/Item.gd"
+} ]
+_global_script_class_icons={
+"Inventory_Slot": "",
+"Item": ""
+}
+
 [application]
 
 config/name="The_Allout_Possible-TAP-"

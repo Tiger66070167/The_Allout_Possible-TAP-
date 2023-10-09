@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Inventory/inventory/Invetory_Slot.gd" type="Script" id=1]
+[ext_resource path="res://Inventory/Item/sprite/Elements-01.png" type="Texture" id=2]
+
+[node name="invertory_slot" type="TextureRect"]
+margin_right = 150.0
+margin_bottom = 150.0
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
