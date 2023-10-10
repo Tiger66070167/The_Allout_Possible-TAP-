@@ -18,11 +18,14 @@ class Control_panel(Control):
 		self.Fighting_scene.start_fight()
 		self.toggle_button_visible()
 	def _on_P_Attack_pressed(self):
-		pass
+		self.Fighting_scene.player_attack()
 	def _on_E_Attack_pressed(self):
 		pass
 	def _on_Kill_Enemy_pressed(self):
+		drone_animate = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim")
 		self.Fighting_scene.start_fight()
+		drone_animate.play("Death")
+		drone_animate.set_speed_scale(3)
 		self.toggle_button_visible()
 	def toggle_button_visible(self):
 		self.start_fight_button.visible = not self.start_fight_button.visible

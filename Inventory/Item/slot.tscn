@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Inventory/Asset/etc/Elements-01.png" type="Texture" id=1]
+
+[node name="slot1" type="Position2D" groups=["zone"]]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 1 )
