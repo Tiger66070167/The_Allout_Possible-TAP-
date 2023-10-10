@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://Globals/Globals.py"
+BgmController="*res://Audio/BGM Controller.gd"
 
 [display]
 
