@@ -20,6 +20,7 @@ pause_mode = 1
 script = ExtResource( 10 )
 
 [node name="Player" parent="Upper_scene/Fighting_scene" instance=ExtResource( 6 )]
+collision_mask = 0
 
 [node name="ParallaxBackground" parent="Upper_scene" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
@@ -28,6 +29,10 @@ script = ExtResource( 4 )
 pause_mode = 1
 
 [node name="Control_panel" parent="Lower_scene" instance=ExtResource( 8 )]
+margin_left = 1.0
+margin_top = -4.0
+margin_right = 1.0
+margin_bottom = -4.0
 
 [node name="Pause_menu" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
