@@ -28,6 +28,8 @@ margin_bottom = -216.0
 columns = 4
 
 [node name="Slot 1" parent="Sprite/GridContainer" instance=ExtResource( 3 )]
+margin_right = 200.0
+margin_bottom = 200.0
 
 [node name="Slot 2" type="Panel" parent="Sprite/GridContainer"]
 margin_left = 204.0

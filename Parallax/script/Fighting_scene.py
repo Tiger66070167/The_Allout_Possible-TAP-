@@ -18,35 +18,55 @@ class Fighting_scene(Node2D):
 		
 		#set fight_state
 		self.fight_state = False
+		self.is_done = False
+		self.counter = 0
 		
 		#Velocity for player pos
-		self.velocity = Vector2()
+		self.enemy_target_pos = {"Fighting":Vector2(1300, 450)}
+		self.player_target_pos = {"Main":Vector2(960, 450), "Fighting":Vector2(650, 450), "Attack":Vector2(1180, 450)}
 		
-		#Start with moving parallax
+		#Setup start
 		self.parallax.is_moving(True)
+		self.player_anim.play("Running")
 	def _process(self, delta):
-		#Player_pos it return Vector2 value
-		self.player_pos = self.player.get_global_position()
-		self.player.move_and_slide(self.velocity)
-		
-		#Condition for moving dron if in fight state
+		player_pos = self.player.get_position()
+		if player_pos == self.player_target_pos.get("Fighting"):
+			self.player_anim.play("Idle")
+			self.parallax.is_moving(False)
+			self.player_anim.flip_h = False
+		elif player_pos == self.player_target_pos.get("Attack"):
+			self.player_anim.flip_h = False
+			if str(self.player_anim.get_animation()) != "Shoot" and self.counter == 0:
+				self.counter += 1
+				self.player_anim.play("Shoot")
+			if self.is_done == True:
+				self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/Effect").play("Gun_Hit")
+				self.counter = 0
+				self.is_done = False
+				self.player_anim.flip_h = True
+				self.player_fighting()
+		elif player_pos == self.player_target_pos.get("Main") and self.fight_state == False:
+			self.parallax.is_moving(True)
+			self.player_anim.play("Running")
+			self.player_anim.flip_h = False
+		else:
+			self.player_anim.play("Running")
+			
 		if self.fight_state == True:
-			self.Drone.move_and_slide(self.velocity)
-			self.Drone_pos = self.Drone.get_global_position()
-		
-		#Check position for player
-		self.position_check(self.player_pos, 500, 960, True)
-		
+			enemy_pos = self.Drone.get_position()
+			if enemy_pos == self.enemy_target_pos.get("Fighting"):
+				self.Drone_anim.play("Idle")
+			else:
+				self.Drone_anim.play("Running")
 	def start_fight(self):
 		"""This function for toggle fighting_scene"""
 		player_anim = self.player_anim
 		if self.fight_state == True:
 			self.fight_state = False
-			self.Drone.queue_free()
 			
 			#let Player and parallax running again
-			self.velocity.x = 200
 			player_anim.play("Running")
+			self.player_main()
 		else:
 			self.fight_state = True
 			#Spawn Drone and setup all drone varlue
@@ -54,20 +74,17 @@ class Fighting_scene(Node2D):
 			self.Drone = self.get_child(1)
 			self.Drone_anim = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim")
 			self.Drone_anim.flip_h = True
+			self.player_anim.flip_h = True
 			
+			self.player_fighting()
+			self.Drone.move_to_position(self.enemy_target_pos.get("Fighting"), 300)
 			#set parallax and player to move
-			self.parallax.is_moving(True, 50)
-			self.velocity.x = -200
-			#stop player
-			player_anim.play("Idle")
-	def position_check(self, entity_position, l_border, r_border = 3000, is_player = False):
-		"""This function is cheking for the position"""
-		#this for stop player when out of scene
-		if entity_position.x <= l_border and self.fight_state == True:
-			self.velocity.x = 0
-			if is_player == True:
-				self.parallax.is_moving(False)
-		elif entity_position.x >= r_border and self.fight_state == False:
-			self.velocity.x = 0
-			if is_player == True:
-				self.parallax.is_moving(True)
+			self.parallax.is_moving(False)
+	def player_attack(self):
+		self.player.move_to_position(self.player_target_pos.get("Attack"), 240)
+	def player_fighting(self):
+		self.player.move_to_position(self.player_target_pos.get("Fighting"), 240)
+	def player_main(self):
+		self.player.move_to_position(self.player_target_pos.get("Main"), 200)
+	def is_done_toggle(self):
+		self.is_done = not self.is_done

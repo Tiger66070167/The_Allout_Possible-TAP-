@@ -11,10 +11,7 @@ class ParallaxBackground(ParallaxBackground):
 		
 	def is_moving(self, moving, speed = 0):
 		'''Start of Stop moving'''
-		player_anim = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Player/Player_anim")
 		if moving == False:
-			player_anim.play("Idle")
 			self.moving_speed = 0
 		else:
-			player_anim.play("Running")
 			self.moving_speed = 50 + speed
