@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TEXTURE/BASE_CHIP.png" type="Texture" id=1]
+
+[node name="GRID_SLOT" type="TextureButton"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 1 )
+
+[node name="SOCKET" type="Position2D" parent="."]
+position = Vector2( 32, 32 )

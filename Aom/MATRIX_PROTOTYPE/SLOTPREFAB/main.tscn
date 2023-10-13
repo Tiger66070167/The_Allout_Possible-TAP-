@@ -1,0 +1,356 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://SLOTPREFAB/TURNING.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SLOTPREFAB/GRID_SLOT.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SLOTPREFAB/STARTER.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SLOTPREFAB/SEP.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TEXTURE/SEPARATOR_CHIP.png" type="Texture" id=5]
+[ext_resource path="res://TEXTURE/TURNING_CHIP.png" type="Texture" id=6]
+[ext_resource path="res://SCRIPT/Matrix.py" type="Script" id=7]
+
+[node name="main" type="Node2D"]
+
+[node name="Matrix" type="Control" parent="."]
+margin_left = 936.0
+margin_top = 232.0
+margin_right = 976.0
+margin_bottom = 272.0
+rect_scale = Vector2( 1.2, 1.2 )
+script = ExtResource( 7 )
+
+[node name="GRID_MATRIX" type="GridContainer" parent="Matrix"]
+margin_right = 104.0
+margin_bottom = 64.0
+columns = 6
+
+[node name="GRID_SLOT1" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+
+[node name="GRID_SLOT2" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 68.0
+margin_right = 132.0
+
+[node name="GRID_SLOT3" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 136.0
+margin_right = 200.0
+
+[node name="GRID_SLOT4" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 204.0
+margin_right = 268.0
+
+[node name="GRID_SLOT5" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 272.0
+margin_right = 336.0
+
+[node name="GRID_SLOT6" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 340.0
+margin_right = 404.0
+
+[node name="GRID_SLOT7" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_top = 68.0
+margin_bottom = 132.0
+
+[node name="GRID_SLOT8" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+
+[node name="GRID_SLOT9" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+
+[node name="GRID_SLOT10" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 204.0
+margin_top = 68.0
+margin_right = 268.0
+margin_bottom = 132.0
+
+[node name="GRID_SLOT11" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 272.0
+margin_top = 68.0
+margin_right = 336.0
+margin_bottom = 132.0
+
+[node name="GRID_SLOT12" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 340.0
+margin_top = 68.0
+margin_right = 404.0
+margin_bottom = 132.0
+
+[node name="GRID_SLOT13" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_top = 136.0
+margin_bottom = 200.0
+
+[node name="GRID_SLOT14" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+
+[node name="GRID_SLOT15" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="GRID_SLOT16" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 204.0
+margin_top = 136.0
+margin_right = 268.0
+margin_bottom = 200.0
+
+[node name="GRID_SLOT17" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 272.0
+margin_top = 136.0
+margin_right = 336.0
+margin_bottom = 200.0
+
+[node name="GRID_SLOT18" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 340.0
+margin_top = 136.0
+margin_right = 404.0
+margin_bottom = 200.0
+
+[node name="GRID_SLOT19" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_top = 204.0
+margin_bottom = 268.0
+
+[node name="GRID_SLOT20" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 68.0
+margin_top = 204.0
+margin_right = 132.0
+margin_bottom = 268.0
+
+[node name="GRID_SLOT21" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 136.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 268.0
+
+[node name="GRID_SLOT22" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 204.0
+margin_top = 204.0
+margin_right = 268.0
+margin_bottom = 268.0
+
+[node name="GRID_SLOT23" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 272.0
+margin_top = 204.0
+margin_right = 336.0
+margin_bottom = 268.0
+
+[node name="GRID_SLOT24" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 340.0
+margin_top = 204.0
+margin_right = 404.0
+margin_bottom = 268.0
+
+[node name="GRID_SLOT25" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_top = 272.0
+margin_bottom = 336.0
+
+[node name="GRID_SLOT26" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 68.0
+margin_top = 272.0
+margin_right = 132.0
+margin_bottom = 336.0
+
+[node name="GRID_SLOT27" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 136.0
+margin_top = 272.0
+margin_right = 200.0
+margin_bottom = 336.0
+
+[node name="GRID_SLOT28" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 204.0
+margin_top = 272.0
+margin_right = 268.0
+margin_bottom = 336.0
+
+[node name="GRID_SLOT29" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 272.0
+margin_top = 272.0
+margin_right = 336.0
+margin_bottom = 336.0
+
+[node name="GRID_SLOT30" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 340.0
+margin_top = 272.0
+margin_right = 404.0
+margin_bottom = 336.0
+
+[node name="GRID_SLOT31" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_top = 340.0
+margin_bottom = 404.0
+
+[node name="GRID_SLOT32" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 68.0
+margin_top = 340.0
+margin_right = 132.0
+margin_bottom = 404.0
+
+[node name="GRID_SLOT33" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 136.0
+margin_top = 340.0
+margin_right = 200.0
+margin_bottom = 404.0
+
+[node name="GRID_SLOT34" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 204.0
+margin_top = 340.0
+margin_right = 268.0
+margin_bottom = 404.0
+
+[node name="GRID_SLOT35" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 272.0
+margin_top = 340.0
+margin_right = 336.0
+margin_bottom = 404.0
+
+[node name="GRID_SLOT36" parent="Matrix/GRID_MATRIX" instance=ExtResource( 2 )]
+margin_left = 340.0
+margin_top = 340.0
+margin_right = 404.0
+margin_bottom = 404.0
+
+[node name="UPPER" type="HBoxContainer" parent="Matrix"]
+margin_top = -64.0
+margin_right = 404.0
+
+[node name="STARTER1" parent="Matrix/UPPER" instance=ExtResource( 3 )]
+
+[node name="STARTER2" parent="Matrix/UPPER" instance=ExtResource( 3 )]
+margin_left = 68.0
+margin_right = 132.0
+
+[node name="STARTER3" parent="Matrix/UPPER" instance=ExtResource( 3 )]
+margin_left = 136.0
+margin_right = 200.0
+
+[node name="STARTER4" parent="Matrix/UPPER" instance=ExtResource( 3 )]
+margin_left = 204.0
+margin_right = 268.0
+
+[node name="STARTER5" parent="Matrix/UPPER" instance=ExtResource( 3 )]
+margin_left = 272.0
+margin_right = 336.0
+
+[node name="STARTER6" parent="Matrix/UPPER" instance=ExtResource( 3 )]
+margin_left = 340.0
+margin_right = 404.0
+
+[node name="LOWER" type="HBoxContainer" parent="Matrix"]
+margin_top = 404.0
+margin_right = 404.0
+margin_bottom = 468.0
+
+[node name="STARTER1" parent="Matrix/LOWER" instance=ExtResource( 3 )]
+
+[node name="STARTER2" parent="Matrix/LOWER" instance=ExtResource( 3 )]
+margin_left = 68.0
+margin_right = 132.0
+
+[node name="STARTER3" parent="Matrix/LOWER" instance=ExtResource( 3 )]
+margin_left = 136.0
+margin_right = 200.0
+
+[node name="STARTER4" parent="Matrix/LOWER" instance=ExtResource( 3 )]
+margin_left = 204.0
+margin_right = 268.0
+
+[node name="STARTER5" parent="Matrix/LOWER" instance=ExtResource( 3 )]
+margin_left = 272.0
+margin_right = 336.0
+
+[node name="STARTER6" parent="Matrix/LOWER" instance=ExtResource( 3 )]
+margin_left = 340.0
+margin_right = 404.0
+
+[node name="LEFT" type="VBoxContainer" parent="Matrix"]
+margin_left = -64.0
+margin_bottom = 64.0
+
+[node name="STARTER1" parent="Matrix/LEFT" instance=ExtResource( 3 )]
+
+[node name="STARTER2" parent="Matrix/LEFT" instance=ExtResource( 3 )]
+margin_top = 68.0
+margin_bottom = 132.0
+
+[node name="STARTER3" parent="Matrix/LEFT" instance=ExtResource( 3 )]
+margin_top = 136.0
+margin_bottom = 200.0
+
+[node name="STARTER4" parent="Matrix/LEFT" instance=ExtResource( 3 )]
+margin_top = 204.0
+margin_bottom = 268.0
+
+[node name="STARTER5" parent="Matrix/LEFT" instance=ExtResource( 3 )]
+margin_top = 272.0
+margin_bottom = 336.0
+
+[node name="STARTER6" parent="Matrix/LEFT" instance=ExtResource( 3 )]
+margin_top = 340.0
+margin_bottom = 404.0
+
+[node name="RIGHT" type="VBoxContainer" parent="Matrix"]
+margin_left = 404.0
+margin_right = 468.0
+margin_bottom = 64.0
+
+[node name="STARTER1" parent="Matrix/RIGHT" instance=ExtResource( 3 )]
+
+[node name="STARTER2" parent="Matrix/RIGHT" instance=ExtResource( 3 )]
+margin_top = 68.0
+margin_bottom = 132.0
+
+[node name="STARTER3" parent="Matrix/RIGHT" instance=ExtResource( 3 )]
+margin_top = 136.0
+margin_bottom = 200.0
+
+[node name="STARTER4" parent="Matrix/RIGHT" instance=ExtResource( 3 )]
+margin_top = 204.0
+margin_bottom = 268.0
+
+[node name="STARTER5" parent="Matrix/RIGHT" instance=ExtResource( 3 )]
+margin_top = 272.0
+margin_bottom = 336.0
+
+[node name="STARTER6" parent="Matrix/RIGHT" instance=ExtResource( 3 )]
+margin_top = 340.0
+margin_bottom = 404.0
+
+[node name="TURNING2" type="TextureButton" parent="."]
+margin_left = 960.0
+margin_top = 848.0
+margin_right = 1054.0
+margin_bottom = 946.0
+texture_normal = ExtResource( 6 )
+
+[node name="SEP2" type="TextureButton" parent="."]
+margin_left = 1056.0
+margin_top = 848.0
+margin_right = 1150.0
+margin_bottom = 946.0
+texture_normal = ExtResource( 5 )
+
+[node name="RUNBUTTON" type="Button" parent="."]
+margin_left = 1200.0
+margin_top = 864.0
+margin_right = 1440.0
+margin_bottom = 936.0
+text = "RUN"
+
+[node name="RESTART" type="Button" parent="."]
+margin_left = 1200.0
+margin_top = 952.0
+margin_right = 1440.0
+margin_bottom = 1024.0
+text = "RESTART"
+
+[node name="TURNING" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="SEP" parent="." instance=ExtResource( 4 )]
+visible = false
