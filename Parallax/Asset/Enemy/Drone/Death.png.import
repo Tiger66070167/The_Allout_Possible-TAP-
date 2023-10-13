@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Death.png-194a808c6e3d9b40b0a0e63fd099145f.stex"
+path="res://.import/death.png-c93788ba0b324b15089df3521639dbe9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parallax/Asset/Enemy/Drone/Death.png"
-dest_files=[ "res://.import/Death.png-194a808c6e3d9b40b0a0e63fd099145f.stex" ]
+source_file="res://Parallax/Asset/Enemy/Drone/death.png"
+dest_files=[ "res://.import/death.png-c93788ba0b324b15089df3521639dbe9.stex" ]
 
 [params]
 

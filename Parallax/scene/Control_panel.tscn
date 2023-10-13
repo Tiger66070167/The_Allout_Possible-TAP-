@@ -55,8 +55,7 @@ text = "Player_ATK"
 
 [node name="E_Attack" type="Button" parent="CenterContainer/HBoxContainer"]
 visible = false
-margin_left = 426.0
-margin_right = 792.0
+margin_right = 366.0
 margin_bottom = 71.0
 size_flags_horizontal = 2
 custom_fonts/font = SubResource( 1 )
@@ -64,8 +63,7 @@ text = "Enemy_ATK"
 
 [node name="Kill_Enemy" type="Button" parent="CenterContainer/HBoxContainer"]
 visible = false
-margin_left = 426.0
-margin_right = 766.0
+margin_right = 340.0
 margin_bottom = 71.0
 size_flags_horizontal = 2
 custom_fonts/font = SubResource( 1 )

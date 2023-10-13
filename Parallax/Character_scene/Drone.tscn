@@ -1,152 +1,156 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
-[ext_resource path="res://Parallax/Asset/Enemy/Drone/Idle.png" type="Texture" id=1]
-[ext_resource path="res://Parallax/Asset/Enemy/Drone/Fire1.png" type="Texture" id=2]
-[ext_resource path="res://Parallax/Asset/Enemy/Drone/Forward.png" type="Texture" id=3]
+[ext_resource path="res://Parallax/Asset/Enemy/Drone/move without FX.png" type="Texture" id=1]
+[ext_resource path="res://Parallax/Asset/Enemy/Drone/move with FX.png" type="Texture" id=2]
+[ext_resource path="res://Parallax/Asset/Enemy/Drone/death.png" type="Texture" id=3]
 [ext_resource path="res://Parallax/script/Drone.gd" type="Script" id=4]
-[ext_resource path="res://Parallax/Asset/Enemy/Drone/Blast2-Sheet.png" type="Texture" id=5]
-[ext_resource path="res://Parallax/Asset/Enemy/Drone/Death.png" type="Texture" id=6]
+[ext_resource path="res://Parallax/Asset/Enemy/Drone/charge.png" type="Texture" id=5]
+[ext_resource path="res://Parallax/Asset/Enemy/Drone/shoot with FX.png" type="Texture" id=6]
 [ext_resource path="res://Parallax/Asset/Effect/Effect_BigHit_1_557x553.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 48, 48 )
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 5 )
+region = Rect2( 9, 0, 36, 26 )
 
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 48, 48 )
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 5 )
+region = Rect2( 9, 26, 36, 26 )
 
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 48, 48 )
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 5 )
+region = Rect2( 9, 52, 36, 26 )
 
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 2 )
-region = Rect2( 144, 0, 48, 48 )
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 5 )
+region = Rect2( 9, 78, 36, 26 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 48, 48 )
+region = Rect2( 9, 0, 47, 26 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 6 )
-region = Rect2( 48, 0, 48, 48 )
+region = Rect2( 9, 26, 47, 26 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 48, 48 )
+region = Rect2( 9, 52, 47, 26 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 6 )
-region = Rect2( 144, 0, 48, 48 )
+region = Rect2( 9, 78, 47, 26 )
 
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 6 )
-region = Rect2( 192, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 6 )
-region = Rect2( 240, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 6 )
-region = Rect2( 288, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 6 )
-region = Rect2( 336, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 5 )
-region = Rect2( 77, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 5 )
-region = Rect2( 154, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 5 )
-region = Rect2( 231, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 5 )
-region = Rect2( 308, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 5 )
-region = Rect2( 385, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 5 )
-region = Rect2( 462, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 5 )
-region = Rect2( 539, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 5 )
-region = Rect2( 616, 0, 77, 63 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 1 )
-region = Rect2( 144, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 48, 48 )
+region = Rect2( 4, 0, 37, 26 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 3 )
-region = Rect2( 48, 0, 48, 48 )
+region = Rect2( 4, 26, 37, 26 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 3 )
-region = Rect2( 96, 0, 48, 48 )
+region = Rect2( 4, 52, 37, 26 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 3 )
-region = Rect2( 144, 0, 48, 48 )
+region = Rect2( 4, 78, 37, 26 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 3 )
+region = Rect2( 4, 104, 37, 26 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 3 )
+region = Rect2( 4, 130, 37, 26 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 26, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 52, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 78, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 104, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 130, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 156, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 182, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 0, 38, 26 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 26, 38, 26 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 52, 38, 26 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 78, 38, 26 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 104, 38, 26 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 130, 38, 26 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 156, 38, 26 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 2 )
+region = Rect2( 3, 182, 38, 26 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ) ],
 "loop": true,
 "name": "Attack",
-"speed": 5.0
+"speed": 8.0
 }, {
-"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
-"loop": true,
+"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ) ],
+"loop": false,
 "name": "Death",
-"speed": 5.0
+"speed": 6.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "Running",
-"speed": 5.0
+"speed": 6.0
 } ]
 
 [sub_resource type="AtlasTexture" id=42]
@@ -201,7 +205,7 @@ region = Rect2( 0, 1106, 557, 553 )
 animations = [ {
 "frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
 "loop": false,
-"name": "Gun_Hit",
+"name": "Get_Hit",
 "speed": 40.0
 }, {
 "frames": [  ],
@@ -219,14 +223,16 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="Drone_anim" type="AnimatedSprite" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 3.97112, 3.81542 )
 frames = SubResource( 11 )
-animation = "Attack"
+animation = "Running"
+frame = 1
 speed_scale = 1.5
 playing = true
 
 [node name="Effect" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 4, 0 )
+scale = Vector2( 0.283, 0.215 )
 frames = SubResource( 41 )
 animation = "Nope"
 playing = true

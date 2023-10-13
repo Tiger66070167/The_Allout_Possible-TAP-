@@ -6,5 +6,4 @@ func _ready():
 	pass
 func spawn():
 	"""this function will spawn enemy to Fighting scene"""
-	var Drone = Drone_path.instance()
-	Fighting_scene.add_child(Drone)
+	Fighting_scene.add_child(Drone_path.instance())
