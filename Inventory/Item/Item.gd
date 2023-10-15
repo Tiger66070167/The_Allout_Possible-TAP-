@@ -11,7 +11,6 @@ func _ready():
 	rest_nodes[0]
 
 
-
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		sel = true

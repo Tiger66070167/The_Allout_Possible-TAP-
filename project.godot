@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 Globals="*res://Globals/Globals.py"
 BgmController="*res://Audio/BGM Controller.gd"
+GlobalRandom="*res://Inventory/Item/global_random.gd"
 
 [display]
 

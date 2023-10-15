@@ -2,9 +2,10 @@
 
 [ext_resource path="res://Inventory/Item/slot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Inventory/inventory/Inventory_container.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Inventory/Item/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Inventory/0Main/spawn.gd" type="Script" id=3]
 
 [node name="Testing Ground" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="slot" type="CanvasLayer" parent="."]
 layer = 0
@@ -41,6 +42,3 @@ __meta__ = {
 }
 
 [node name="FUCk" type="CanvasLayer" parent="."]
-
-[node name="item" parent="FUCk" instance=ExtResource( 3 )]
-position = Vector2( 476, 893 )
