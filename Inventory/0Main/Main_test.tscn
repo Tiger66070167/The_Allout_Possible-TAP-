@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Inventory/Item/slot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Inventory/inventory/Inventory_container.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Inventory/0Main/spawn.gd" type="Script" id=3]
+
+[node name="Testing Ground" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="slot" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="slot1" parent="slot" instance=ExtResource( 1 )]
+position = Vector2( 603, 451 )
+
+[node name="slot2" parent="slot" instance=ExtResource( 1 )]
+position = Vector2( 856, 444 )
+
+[node name="slot3" parent="slot" instance=ExtResource( 1 )]
+position = Vector2( 1112, 443 )
+
+[node name="slot4" parent="slot" instance=ExtResource( 1 )]
+position = Vector2( 1375, 454 )
+
+[node name="slot5" parent="slot" instance=ExtResource( 1 )]
+position = Vector2( 392, 678 )
+
+[node name="slot6" parent="slot" instance=ExtResource( 1 )]
+position = Vector2( 657, 685 )
+
+[node name="slot7" parent="slot" instance=ExtResource( 1 )]
+position = Vector2( 888, 671 )
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Inventory_container" parent="BG" instance=ExtResource( 2 )]
+position = Vector2( 992.5, 471.5 )
+scale = Vector2( 1.7643, 1.79905 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FUCk" type="CanvasLayer" parent="."]
