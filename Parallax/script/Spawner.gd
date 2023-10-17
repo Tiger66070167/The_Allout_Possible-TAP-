@@ -7,3 +7,12 @@ func _ready():
 func spawn():
 	"""this function will spawn enemy to Fighting scene"""
 	Fighting_scene.add_child(Drone_path.instance())
+	Globals.Enemy_Health = 5
+func get_player_hp():
+	return Globals.Player_Health
+func get_enemy_hp():
+	return Globals.Enemy_Health
+func get_game_state():
+	return Globals.game_state
+func set_game_state(state):
+	Globals.game_state = state

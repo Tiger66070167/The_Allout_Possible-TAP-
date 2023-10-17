@@ -151,12 +151,12 @@ animations = [ {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "Attack",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "Damaged",
-"speed": 4.0
+"speed": 7.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
@@ -190,6 +190,7 @@ shape = SubResource( 1 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
 animation = "Idle"
+frame = 5
 speed_scale = 2.0
 playing = true
 

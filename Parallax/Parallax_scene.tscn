@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Parallax/script/Parallax_scene.py" type="Script" id=1]
 [ext_resource path="res://Parallax/scene/ParallaxBackground.tscn" type="PackedScene" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://Parallax/script/ParallaxBackground.py" type="Script" id=4]
 [ext_resource path="res://Parallax/script/Spawner.gd" type="Script" id=5]
 [ext_resource path="res://Parallax/Character_scene/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Parallax/Asset/UI/heart pixel art 64x64.png" type="Texture" id=7]
 [ext_resource path="res://Parallax/scene/Control_panel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Parallax/script/Health_Bar.gd" type="Script" id=9]
 [ext_resource path="res://Parallax/script/Fighting_scene.py" type="Script" id=10]
 
 [node name="Parallax_scene" type="Node2D"]
@@ -34,9 +36,84 @@ margin_top = -4.0
 margin_right = 1.0
 margin_bottom = -4.0
 
+[node name="Health_Bar" type="Node2D" parent="Lower_scene"]
+position = Vector2( 0, 536 )
+script = ExtResource( 9 )
+
+[node name="Enemy_Health_Bar" type="HBoxContainer" parent="Lower_scene/Health_Bar"]
+margin_left = 1584.0
+margin_top = 2.0
+margin_right = 1919.89
+margin_bottom = 66.0
+alignment = 2
+
+[node name="h1" type="TextureRect" parent="Lower_scene/Health_Bar/Enemy_Health_Bar"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h2" type="TextureRect" parent="Lower_scene/Health_Bar/Enemy_Health_Bar"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h3" type="TextureRect" parent="Lower_scene/Health_Bar/Enemy_Health_Bar"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h4" type="TextureRect" parent="Lower_scene/Health_Bar/Enemy_Health_Bar"]
+margin_left = 204.0
+margin_right = 268.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h5" type="TextureRect" parent="Lower_scene/Health_Bar/Enemy_Health_Bar"]
+margin_left = 272.0
+margin_right = 336.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="Player_Health_Bar" type="HBoxContainer" parent="Lower_scene/Health_Bar"]
+margin_top = 1.0
+margin_right = 170.0
+margin_bottom = 41.0
+
+[node name="h1" type="TextureRect" parent="Lower_scene/Health_Bar/Player_Health_Bar"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h2" type="TextureRect" parent="Lower_scene/Health_Bar/Player_Health_Bar"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h3" type="TextureRect" parent="Lower_scene/Health_Bar/Player_Health_Bar"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h4" type="TextureRect" parent="Lower_scene/Health_Bar/Player_Health_Bar"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="h5" type="TextureRect" parent="Lower_scene/Health_Bar/Player_Health_Bar"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
 [node name="Pause_menu" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
 visible = false
 
-[node name="Spawner" type="Node2D" parent="."]
+[node name="my_godot" type="Node2D" parent="."]
 script = ExtResource( 5 )

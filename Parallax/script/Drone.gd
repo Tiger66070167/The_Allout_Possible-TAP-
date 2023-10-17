@@ -8,8 +8,11 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if str(drone_anim.get_animation()) == "Attack" and drone_anim.get_frame() == 8:
-		player_anim.play("Damaged")
+	if str(drone_anim.get_animation()) == "Attack":
+		if drone_anim.get_frame() in [8, 12]:
+			player_anim.play("Damaged")
+	elif Globals.Enemy_Health <= 0:
+		drone_anim.play("Death")
 	position = position.move_toward(Target_pos, SPEED*delta)
 
 func move_to_position(to_position, with_speed=200):
@@ -19,10 +22,10 @@ func move_to_position(to_position, with_speed=200):
 
 func _on_Drone_anim_animation_finished():
 	if str(drone_anim.get_animation()) == "Death":
-		get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()
 		queue_free()
 	elif str(drone_anim.get_animation()) == "Attack":
 		drone_anim.play("Running")
 		get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()
 	elif str(drone_anim.get_animation()) == "Damaged":
+		Globals.Enemy_Health -= 1
 		drone_anim.play("Idle")

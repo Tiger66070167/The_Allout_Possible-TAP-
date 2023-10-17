@@ -31,29 +31,31 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 772.0
-margin_top = 234.0
-margin_right = 1148.0
-margin_bottom = 305.0
-custom_constants/separation = 50
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 960.0
+margin_top = 268.0
+margin_right = 960.0
+margin_bottom = 272.0
 
-[node name="Fight_scene_Button" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_constants/separation = 10
+
+[node name="Fight_scene_Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+visible = false
 margin_right = 376.0
 margin_bottom = 71.0
 custom_fonts/font = SubResource( 2 )
 text = "Start Fight"
 
-[node name="P_Attack" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="P_Attack" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 visible = false
-margin_left = 426.0
-margin_right = 792.0
+margin_right = 366.0
 margin_bottom = 71.0
 size_flags_horizontal = 2
 custom_fonts/font = SubResource( 1 )
 text = "Player_ATK"
 
-[node name="E_Attack" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="E_Attack" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 visible = false
 margin_right = 366.0
 margin_bottom = 71.0
@@ -61,15 +63,27 @@ size_flags_horizontal = 2
 custom_fonts/font = SubResource( 1 )
 text = "Enemy_ATK"
 
-[node name="Kill_Enemy" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="End_fight" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 visible = false
-margin_right = 340.0
+margin_right = 447.0
 margin_bottom = 71.0
-size_flags_horizontal = 2
-custom_fonts/font = SubResource( 1 )
-text = "Kill Enemy"
+custom_fonts/font = SubResource( 2 )
+text = "End fight"
 
-[connection signal="pressed" from="CenterContainer/HBoxContainer/Fight_scene_Button" to="." method="_on_Fight_scene_Button_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/P_Attack" to="." method="_on_P_Attack_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/E_Attack" to="." method="_on_E_Attack_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/Kill_Enemy" to="." method="_on_Kill_Enemy_pressed"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 4.0
+margin_bottom = 4.0
+custom_constants/separation = 10
+
+[node name="Spawn_Enemy" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+margin_right = 447.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 2 )
+text = "Spawn Enemy"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Fight_scene_Button" to="." method="_on_Fight_scene_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/P_Attack" to="." method="_on_P_Attack_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/E_Attack" to="." method="_on_E_Attack_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/End_fight" to="." method="_on_End_fight_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Spawn_Enemy" to="." method="_on_Spawn_Enemy_pressed"]

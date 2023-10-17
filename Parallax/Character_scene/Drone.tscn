@@ -140,7 +140,7 @@ region = Rect2( 3, 182, 38, 26 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ) ],
+"frames": [ SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 83 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ) ],
 "loop": true,
 "name": "Attack",
 "speed": 8.0
@@ -148,7 +148,7 @@ animations = [ {
 "frames": [ SubResource( 84 ), SubResource( 85 ) ],
 "loop": true,
 "name": "Damaged",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ) ],
 "loop": false,
@@ -177,8 +177,8 @@ shape = SubResource( 1 )
 [node name="Drone_anim" type="AnimatedSprite" parent="."]
 scale = Vector2( 3.97112, 3.81542 )
 frames = SubResource( 11 )
-animation = "Damaged"
-frame = 1
+animation = "Attack"
+frame = 15
 speed_scale = 1.5
 playing = true
 
