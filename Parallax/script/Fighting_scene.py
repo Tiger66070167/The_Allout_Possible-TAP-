@@ -16,7 +16,7 @@ class Fighting_scene(Node2D):
 		
 		#Velocity for player pos
 		self.enemy_target_pos = {"Fighting":Vector2(1300, 450), "Attack":Vector2(730, 450)}
-		self.player_target_pos = {"Main":Vector2(960, 450), "Fighting":Vector2(650, 450), "Attack":Vector2(1250, 450)}
+		self.player_target_pos = {"Main":Vector2(960, 450), "Fighting":Vector2(650, 450), "Attack":Vector2(1200, 450)}
 
 		#Setup start
 		self.parallax.is_moving(True)
@@ -31,6 +31,8 @@ class Fighting_scene(Node2D):
 		
 		#this value if for checking the animation if is done
 		self.is_done = False
+		self.clock = 0
+		self.another_clock = 0
 		
 	def _process(self, delta):
 		player_pos = self.player.get_position()
@@ -38,16 +40,19 @@ class Fighting_scene(Node2D):
 		#Enemy contition
 		if self.get_child_count() == 2:
 			enemy_pos = self.enemy.get_position()
-			if enemy_pos == self.enemy_target_pos.get("Fighting") and self.enemy_state == "Fighting":
+			if enemy_pos == self.enemy_target_pos.get("Fighting") and self.enemy_state == "Fighting" and self.another_clock == 0:
 				self.enemy_anim.flip_h = True
 				self.enemy_anim.play("Idle")
-			elif enemy_pos == self.enemy_target_pos.get("Attack") and self.enemy_state == "Attacking":
-				self.enemy_anim.play("Attack")
+				self.another_clock = 1
+			elif enemy_pos == self.enemy_target_pos.get("Attack") and self.enemy_state == "Attacking" and self.another_clock == 0:
+				if not self.is_done:
+					self.enemy_anim.play("Attack")
 				if self.is_done:
 					self.enemy.move_to_position(self.enemy_target_pos.get("Fighting"), 300)
 					self.enemy_anim.flip_h = False
 					self.is_done = False
 					self.enemy_state = "Fighting"
+					self.another_clock = 0
 			elif self.enemy_state == "Death":
 				self.enemy_anim.play("Death")
 				if self.is_done:
@@ -55,29 +60,31 @@ class Fighting_scene(Node2D):
 					self.player_anim.play("Running")
 					self.player_state = "Running"
 					self.is_done = False
-			else:
-				self.enemy_anim.play("Running")
 		#Player Condition
-		if player_pos == self.player_target_pos.get("Fighting") and self.player_state == "Fighting":
+		if player_pos == self.player_target_pos.get("Fighting") and self.player_state == "Fighting" and self.clock == 0:
 			self.player_anim.flip_h = False
 			self.player_anim.play("Idle")
-		elif player_pos == self.player_target_pos.get("Attack") and self.player_state == "Attacking":
-			self.player_anim.play("Attack")
+			self.clock = 1
+		elif player_pos == self.player_target_pos.get("Attack") and self.player_state == "Attacking" and self.clock == 0:
+			if not self.is_done:
+				self.player_anim.play("Attack")
 			if self.is_done:
 				self.player_anim.flip_h = True
 				self.player.move_to_position(self.player_target_pos.get("Fighting"), 400)
 				self.player_state = "Fighting"
 				self.is_done = False
+				self.clock = 0
 		elif player_pos == self.player_target_pos.get("Main") and self.player_state == "Running":
 			self.parallax.is_moving(True)
-		else:
-			self.player_anim.play("Running")
+			
 	def start_fight(self):
 		"""This function for toggle fighting_scene"""
 		spawner = self.get_node("/root/Parallax_scene/Spawner")
 		if self.fighting_state == False:
 			self.fighting_state = True
 			
+			self.clock = 0
+			self.another_clock = 0
 			#spawn enemy
 			spawner.spawn()
 			
@@ -99,23 +106,35 @@ class Fighting_scene(Node2D):
 			self.player_state = "Fighting"
 			self.enemy_state = "Fighting"
 			self.parallax.is_moving(False)
+			
 	def end_fight(self):
 		if self.fighting_state == True:
 			self.fighting_state = False
 			
+			self.clock = 0
+			self.another_clock = 0
+			
 			self.enemy_anim.play("Death")
 			
 			self.enemy_state = "Death"
-	
+			
 	def player_attack(self):
+		self.move_child(self.enemy, 1)
+		self.move_child(self.player, 2)
 		self.player.move_to_position(self.player_target_pos.get("Attack"), 400)
 		self.player_anim.play("Running")
 		self.player_state = "Attacking"
-
+		self.clock = 0
+		self.another_clock = 0
+		
 	def enemy_attack(self):
+		self.move_child(self.player, 1)
+		self.move_child(self.enemy, 2)
 		self.enemy.move_to_position(self.enemy_target_pos.get("Attack"), 300)
 		self.enemy_anim.play("Running")
 		self.enemy_state = "Attacking"
+		self.clock = 0
+		self.another_clock = 0
 		
 	def is_done_toggle(self):
 		self.is_done = True

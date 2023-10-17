@@ -21,14 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="The_Allout_Possible-TAP-"
-run/main_scene="res://Inventory/0Main/Main_test.tscn"
+run/main_scene="res://Parallax/Parallax_scene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Globals="*res://Globals/Globals.py"
 BgmController="*res://Audio/BGM Controller.gd"
 GlobalRandom="*res://Inventory/Item/global_random.gd"
+Globals="*res://Globals/Globals.gd"
 
 [display]
 
