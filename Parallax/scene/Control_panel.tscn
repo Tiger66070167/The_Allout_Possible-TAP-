@@ -32,16 +32,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 960.0
-margin_top = 268.0
-margin_right = 960.0
-margin_bottom = 272.0
+margin_left = 736.0
+margin_top = 197.0
+margin_right = 1183.0
+margin_bottom = 343.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 447.0
+margin_bottom = 71.0
+custom_constants/separation = 10
+
+[node name="Spawn_Enemy" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 447.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 2 )
+text = "Spawn Enemy"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 75.0
+margin_right = 447.0
+margin_bottom = 146.0
 custom_constants/separation = 10
 
 [node name="Fight_scene_Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-visible = false
 margin_right = 376.0
 margin_bottom = 71.0
 custom_fonts/font = SubResource( 2 )
@@ -70,20 +83,8 @@ margin_bottom = 71.0
 custom_fonts/font = SubResource( 2 )
 text = "End fight"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 4.0
-margin_bottom = 4.0
-custom_constants/separation = 10
-
-[node name="Spawn_Enemy" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
-visible = false
-margin_right = 447.0
-margin_bottom = 71.0
-custom_fonts/font = SubResource( 2 )
-text = "Spawn Enemy"
-
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Spawn_Enemy" to="." method="_on_Spawn_Enemy_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Fight_scene_Button" to="." method="_on_Fight_scene_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/P_Attack" to="." method="_on_P_Attack_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/E_Attack" to="." method="_on_E_Attack_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/End_fight" to="." method="_on_End_fight_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Spawn_Enemy" to="." method="_on_Spawn_Enemy_pressed"]

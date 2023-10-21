@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Parallax/Character_scene/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Parallax/script/Fighting_scene.py" type="Script" id=2]
+
+[node name="Fighting_scene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -200, 450 )
+collision_mask = 0

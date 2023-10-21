@@ -27,6 +27,7 @@ class Control_panel(Control):
 			self.button_visible(False, False, True, True, False)
 	def _on_Fight_scene_Button_pressed(self):
 		self.Fighting_scene.start_fight()
+		self.command.new_wave()
 		
 	def _on_P_Attack_pressed(self):
 		self.Fighting_scene.player_attack()
