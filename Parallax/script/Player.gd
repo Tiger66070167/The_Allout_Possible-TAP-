@@ -31,6 +31,6 @@ func _on_Player_anim_animation_finished():
 	if str(player_anim.get_animation()) == "Death":
 		get_node("/root/Parallax_scene/Death_menu").visible = true
 	if str(player_anim.get_animation()) == "Attack":
-		Globals.Enemy_Health -= 1
+		Globals.Enemy_Health -= 5
 		player_anim.play("Running")
 		get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()

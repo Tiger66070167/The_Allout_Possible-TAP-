@@ -69,6 +69,7 @@ class Fighting_scene(Node2D):
 			self.clock = 1
 			if self.enemy_state == "Death":
 				self.command.set_enemy_wave("-", True)
+				self.is_done_toggle()
 		elif player_pos == self.player_target_pos.get("Attack") and self.player_state == "Attacking" and self.clock == 0:
 			if not self.is_done:
 				self.player_anim.play("Attack")
@@ -82,6 +83,9 @@ class Fighting_scene(Node2D):
 			self.parallax.is_moving(True)
 		if len(self.command.get_enemy_wave()) == 1:
 			self.end_fight()
+		elif self.get_child_count() != 2 and self.is_done:
+				self.spawn_enemy()
+				self.is_done = False
 	def start_fight(self):
 		"""This function for toggle fighting_scene"""
 		if self.fighting_state == False:

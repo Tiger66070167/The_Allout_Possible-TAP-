@@ -245,11 +245,11 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Hammer_anim" type="AnimatedSprite" parent="."]
-scale = Vector2( 5, 5 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Death"
 frame = 9
 playing = true
-offset = Vector2( -11, -7 )
+offset = Vector2( -11, -5 )
 
 [connection signal="animation_finished" from="Hammer_anim" to="." method="_on_Hammer_anim_animation_finished"]
