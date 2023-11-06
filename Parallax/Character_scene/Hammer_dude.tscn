@@ -247,8 +247,8 @@ shape = SubResource( 1 )
 [node name="Hammer_anim" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
-animation = "Death"
-frame = 9
+animation = "Attack"
+frame = 22
 playing = true
 offset = Vector2( -11, -5 )
 

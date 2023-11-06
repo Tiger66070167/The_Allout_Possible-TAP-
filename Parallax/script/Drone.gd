@@ -17,13 +17,12 @@ func move_to_position(to_position, with_speed=200):
 	Target_pos = to_position
 	SPEED = with_speed
 
-
 func _on_Drone_anim_animation_finished():
 	if str(drone_anim.get_animation()) == "Death":
 		queue_free()
 	elif str(drone_anim.get_animation()) == "Attack":
-		Globals.Player_Health -= 1
 		drone_anim.play("Running")
 		get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()
 	elif str(drone_anim.get_animation()) == "Damaged":
+		Globals.Enemy_Health -= Globals.Player_damage
 		drone_anim.play("Idle")

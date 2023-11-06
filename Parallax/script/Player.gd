@@ -27,10 +27,10 @@ func move_to_position(to_position, with_speed=200):
 func _on_Player_anim_animation_finished():
 	var player_anim = get_node("Player_anim")
 	if str(player_anim.get_animation()) == "Damaged":
+		Globals.Player_Health -= 5
 		player_anim.play("Idle")
 	if str(player_anim.get_animation()) == "Death":
 		get_node("/root/Parallax_scene/Death_menu").visible = true
 	if str(player_anim.get_animation()) == "Attack":
-		Globals.Enemy_Health -= 5
 		player_anim.play("Running")
 		get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()

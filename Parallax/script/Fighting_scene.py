@@ -1,6 +1,6 @@
 from godot import exposed, export
 from godot import *
-
+import random
 
 @exposed
 class Fighting_scene(Node2D):
@@ -75,7 +75,7 @@ class Fighting_scene(Node2D):
 				self.player_anim.play("Attack")
 			if self.is_done:
 				self.player_anim.flip_h = True
-				self.player.move_to_position(self.player_target_pos.get("Fighting"), 400)
+				self.player.move_to_position(self.player_target_pos.get("Fighting"), 600)
 				self.player_state = "Fighting"
 				self.is_done = False
 				self.clock = 0
@@ -124,7 +124,7 @@ class Fighting_scene(Node2D):
 		self.enemy_anim.play("Running")
 		self.enemy_state = "Fighting"
 		
-		self.enemy.move_to_position(self.enemy_target_pos.get("Fighting"), 500)
+		self.enemy.move_to_position(self.enemy_target_pos.get("Fighting"), 600)
 		
 	def end_fight(self):
 		if self.get_child_count() == 2:
@@ -137,16 +137,21 @@ class Fighting_scene(Node2D):
 			self.player_state = "Running"
 			self.player_anim.play("Running")
 			self.player.move_to_position(self.player_target_pos.get("Running"), 400)
-	def player_attack(self):
+		
+	def player_attack(self, damage=2):
+		self.command.set_damage("player", damage)
+		
 		self.move_child(self.enemy, 1)
 		self.move_child(self.player, 2)
-		self.player.move_to_position(self.player_target_pos.get("Attack"), 400)
+		self.player.move_to_position(self.player_target_pos.get("Attack"), 600)
 		self.player_anim.play("Running")
 		self.player_state = "Attacking"
 		self.clock = 0
 		self.another_clock = 0
 		
-	def enemy_attack(self):
+	def enemy_attack(self, damage=1):
+		self.command.set_damage("enemy", damage)
+		
 		self.move_child(self.player, 1)
 		self.move_child(self.enemy, 2)
 		self.enemy.move_to_position(self.enemy_target_pos.get("Attack"), 500)
@@ -154,8 +159,16 @@ class Fighting_scene(Node2D):
 		self.enemy_state = "Attacking"
 		self.clock = 0
 		self.another_clock = 0
+		
 	def kill_enemy(self):
 		self.enemy_state = "Death"
 		self.enemy_anim.play("Death")
+		
 	def is_done_toggle(self):
 		self.is_done = True
+		
+	def randomn_enemy(self, diffculty):
+		enemy_list = ["Drone", "Ball_guy", "Hammer_dude"]
+		listed_enemy = sorted(random.choices(enemy_list, weights=[7, 5*diffculty, 2*diffculty], k=round(3*diffculty)), key = lambda x:len(x), reverse=True)
+		for enemy in listed_enemy:
+			self.command.set_enemy_wave(enemy)

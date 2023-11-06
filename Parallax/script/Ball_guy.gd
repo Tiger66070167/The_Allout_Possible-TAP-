@@ -21,8 +21,8 @@ func _on_Ball_anim_animation_finished():
 	if str(ball_anim.get_animation()) == "Death":
 		queue_free()
 	elif str(ball_anim.get_animation()) == "Attack":
-		Globals.Player_Health -= 1
 		ball_anim.play("Running")
 		get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()
 	elif str(ball_anim.get_animation()) == "Damaged":
+		Globals.Enemy_Health -= Globals.Player_damage
 		ball_anim.play("Idle")
