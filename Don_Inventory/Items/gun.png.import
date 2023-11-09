@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hearts-export.png-bec279a8eed2ee20eab71935a73c65ee.stex"
+path="res://.import/gun.png-5da1658fe7688bee164f6b61624b0def.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parallax/Asset/UI/hearts-export.png"
-dest_files=[ "res://.import/hearts-export.png-bec279a8eed2ee20eab71935a73c65ee.stex" ]
+source_file="res://Don_Inventory/Items/gun.png"
+dest_files=[ "res://.import/gun.png-5da1658fe7688bee164f6b61624b0def.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

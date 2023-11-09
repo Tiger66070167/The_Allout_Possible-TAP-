@@ -15,6 +15,7 @@ func spawn(enemy=Globals.enemy_wave[0]):
 	else:
 		Fighting_scene.add_child(enemy_path[enemy].instance())
 		Globals.Enemy_Health = enemy_health[enemy]
+		Globals.Enemy_Full_Health = enemy_health[enemy]
 		Globals.diffculty += 0.2
 func get_player_hp():
 	return Globals.Player_Health
@@ -46,7 +47,7 @@ func set_damage(entity, damage):
 	if entity == "player":
 		Globals.Player_damage = damage
 	else:
-		Globals.Enemy_Health = damage
+		Globals.Enemy_damage = damage
 func get_enemy_wave():
 	return Globals.enemy_wave
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart pixel art 64x64.png-17b56350d621b624ff9b20dacd3c749a.stex"
+path="res://.import/Elements-01.png-78d43bc3fec91b4a19204dda0efa5566.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parallax/Asset/UI/heart pixel art 64x64.png"
-dest_files=[ "res://.import/heart pixel art 64x64.png-17b56350d621b624ff9b20dacd3c749a.stex" ]
+source_file="res://Don_Inventory/Asset/Elements-01.png"
+dest_files=[ "res://.import/Elements-01.png-78d43bc3fec91b4a19204dda0efa5566.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

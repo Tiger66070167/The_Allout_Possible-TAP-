@@ -138,7 +138,7 @@ class Fighting_scene(Node2D):
 			self.player_anim.play("Running")
 			self.player.move_to_position(self.player_target_pos.get("Running"), 400)
 		
-	def player_attack(self, damage=2):
+	def player_attack(self, damage=1):
 		self.command.set_damage("player", damage)
 		
 		self.move_child(self.enemy, 1)
