@@ -15,8 +15,8 @@ func set_item(item_index, item):
 func swap_items(item_index, target_item_index):
 	var target_item = items[target_item_index]
 	var item = items[item_index]
-	items[target_item] = item
-	items[item] = target_item
+	items[target_item_index] = item
+	items[item_index] = target_item
 	emit_signal("item_changed", [item_index, target_item_index])
 	
 func remove_item(item_index):
