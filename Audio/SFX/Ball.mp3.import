@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Ball.mp3-7f0b11cc16e3820d94aa074852f623c0.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Ball.mp3"
+dest_files=[ "res://.import/Ball.mp3-7f0b11cc16e3820d94aa074852f623c0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

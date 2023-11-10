@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hammer_Beam.mp3-545a39824c33f0a9c662146ce5b9f4a8.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Hammer_Beam.mp3"
+dest_files=[ "res://.import/Hammer_Beam.mp3-545a39824c33f0a9c662146ce5b9f4a8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

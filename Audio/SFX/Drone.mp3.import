@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Drone.mp3-a3c36557767dad0cc0ee7ff8f4dc770f.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Drone.mp3"
+dest_files=[ "res://.import/Drone.mp3-a3c36557767dad0cc0ee7ff8f4dc770f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

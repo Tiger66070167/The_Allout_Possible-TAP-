@@ -38,7 +38,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-BgmController="*res://Audio/BGM Controller.gd"
+BgmController="*res://Audio/Audio Scripts/BGM Controller.gd"
 GlobalRandom="*res://Inventory/Item/global_random.gd"
 Globals="*res://Globals/Globals.gd"
 
