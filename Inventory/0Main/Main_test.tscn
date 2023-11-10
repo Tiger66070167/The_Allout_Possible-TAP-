@@ -7,6 +7,16 @@
 [node name="Testing Ground" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Inventory_container" parent="BG" instance=ExtResource( 2 )]
+position = Vector2( 992.5, 471.5 )
+scale = Vector2( 1.7643, 1.79905 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="slot" type="CanvasLayer" parent="."]
 layer = 0
 
@@ -31,14 +41,4 @@ position = Vector2( 657, 685 )
 [node name="slot7" parent="slot" instance=ExtResource( 1 )]
 position = Vector2( 888, 671 )
 
-[node name="BG" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Inventory_container" parent="BG" instance=ExtResource( 2 )]
-position = Vector2( 992.5, 471.5 )
-scale = Vector2( 1.7643, 1.79905 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FUCk" type="CanvasLayer" parent="."]
+[node name="Item" type="CanvasLayer" parent="."]

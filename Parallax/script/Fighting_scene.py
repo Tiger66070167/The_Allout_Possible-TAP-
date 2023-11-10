@@ -1,6 +1,6 @@
 from godot import exposed, export
 from godot import *
-
+import random
 
 @exposed
 class Fighting_scene(Node2D):
@@ -8,13 +8,13 @@ class Fighting_scene(Node2D):
 	def _ready(self):
 		"""Define all value and Path for every here **Discripe on top of the value**"""
 		#Player_path **Not animate sprite**
-		self.player = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Player")
+		self.player = self.get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Player")
 		#Player_ainmate_path
-		self.player_anim = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Player/Player_anim")
+		self.player_anim = self.get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Player/Player_anim")
 		#Prallax_path
-		self.parallax = self.get_node("/root/Parallax_scene/Upper_scene/ParallaxBackground/")
+		self.parallax = self.get_node("/root/Main/Parallax_scene/Upper_scene/ParallaxBackground/")
 		#Call godot command and change global value
-		self.command = self.get_node("/root/Parallax_scene/my_godot")
+		self.command = self.get_node("/root/Main/Parallax_scene/my_godot")
 		#Velocity for player pos
 		self.enemy_target_pos = {"Fighting":Vector2(1300, 450), "Attack":Vector2(830, 450)}
 		self.player_target_pos = {"Running":Vector2(960, 450), "Fighting":Vector2(650, 450), "Attack":Vector2(1200, 450)}
@@ -69,12 +69,13 @@ class Fighting_scene(Node2D):
 			self.clock = 1
 			if self.enemy_state == "Death":
 				self.command.set_enemy_wave("-", True)
+				self.is_done_toggle()
 		elif player_pos == self.player_target_pos.get("Attack") and self.player_state == "Attacking" and self.clock == 0:
 			if not self.is_done:
 				self.player_anim.play("Attack")
 			if self.is_done:
 				self.player_anim.flip_h = True
-				self.player.move_to_position(self.player_target_pos.get("Fighting"), 400)
+				self.player.move_to_position(self.player_target_pos.get("Fighting"), 600)
 				self.player_state = "Fighting"
 				self.is_done = False
 				self.clock = 0
@@ -82,6 +83,9 @@ class Fighting_scene(Node2D):
 			self.parallax.is_moving(True)
 		if len(self.command.get_enemy_wave()) == 1:
 			self.end_fight()
+		elif self.get_child_count() != 2 and self.is_done:
+				self.spawn_enemy()
+				self.is_done = False
 	def start_fight(self):
 		"""This function for toggle fighting_scene"""
 		if self.fighting_state == False:
@@ -102,15 +106,15 @@ class Fighting_scene(Node2D):
 			self.parallax.is_moving(False)
 	def spawn_enemy(self):
 		"""create enemy"""
-		enemy_anim_path = {"Drone":"/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim/", \
-		"Ball_guy":"/root/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/Ball_anim/", \
-		"Hammer_dude":"/root/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/Hammer_anim/"}
-		enemy_path = {"Drone":"/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/", \
-		"Ball_guy":"/root/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/", \
-		"Hammer_dude":"/root/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/"}
+		enemy_anim_path = {"Drone":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim/", \
+		"Ball_guy":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/Ball_anim/", \
+		"Hammer_dude":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/Hammer_anim/"}
+		enemy_path = {"Drone":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Drone/", \
+		"Ball_guy":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/", \
+		"Hammer_dude":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/"}
 		
 		enemy = str(list(self.command.get_enemy_wave())[0])
-		spawner = self.get_node("/root/Parallax_scene/my_godot")
+		spawner = self.get_node("/root/Main/Parallax_scene/my_godot")
 		spawner.spawn()
 		
 		self.another_clock = 0
@@ -120,7 +124,7 @@ class Fighting_scene(Node2D):
 		self.enemy_anim.play("Running")
 		self.enemy_state = "Fighting"
 		
-		self.enemy.move_to_position(self.enemy_target_pos.get("Fighting"), 500)
+		self.enemy.move_to_position(self.enemy_target_pos.get("Fighting"), 600)
 		
 	def end_fight(self):
 		if self.get_child_count() == 2:
@@ -133,16 +137,21 @@ class Fighting_scene(Node2D):
 			self.player_state = "Running"
 			self.player_anim.play("Running")
 			self.player.move_to_position(self.player_target_pos.get("Running"), 400)
-	def player_attack(self):
+		
+	def player_attack(self, damage=1):
+		self.command.set_damage("player", damage)
+		
 		self.move_child(self.enemy, 1)
 		self.move_child(self.player, 2)
-		self.player.move_to_position(self.player_target_pos.get("Attack"), 400)
+		self.player.move_to_position(self.player_target_pos.get("Attack"), 600)
 		self.player_anim.play("Running")
 		self.player_state = "Attacking"
 		self.clock = 0
 		self.another_clock = 0
 		
-	def enemy_attack(self):
+	def enemy_attack(self, damage=1):
+		self.command.set_damage("enemy", damage)
+		
 		self.move_child(self.player, 1)
 		self.move_child(self.enemy, 2)
 		self.enemy.move_to_position(self.enemy_target_pos.get("Attack"), 500)
@@ -150,8 +159,16 @@ class Fighting_scene(Node2D):
 		self.enemy_state = "Attacking"
 		self.clock = 0
 		self.another_clock = 0
+		
 	def kill_enemy(self):
 		self.enemy_state = "Death"
 		self.enemy_anim.play("Death")
+		
 	def is_done_toggle(self):
 		self.is_done = True
+		
+	def randomn_enemy(self, diffculty):
+		enemy_list = ["Drone", "Ball_guy", "Hammer_dude"]
+		listed_enemy = sorted(random.choices(enemy_list, weights=[7, 5*diffculty, 2*diffculty], k=round(3*diffculty)), key = lambda x:len(x), reverse=True)
+		for enemy in listed_enemy:
+			self.command.set_enemy_wave(enemy)

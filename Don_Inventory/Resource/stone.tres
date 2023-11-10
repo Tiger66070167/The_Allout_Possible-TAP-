@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Don_Inventory/Script/Items.gd" type="Script" id=1]
+[ext_resource path="res://Don_Inventory/Items/BIGGER_STONEt.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Stone"
+texture = ExtResource( 2 )

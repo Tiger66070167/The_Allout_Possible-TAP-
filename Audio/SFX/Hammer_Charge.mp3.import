@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hammer_Charge.mp3-5fed5339eef87c8fdac6fe2599cc1fb3.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Hammer_Charge.mp3"
+dest_files=[ "res://.import/Hammer_Charge.mp3-5fed5339eef87c8fdac6fe2599cc1fb3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

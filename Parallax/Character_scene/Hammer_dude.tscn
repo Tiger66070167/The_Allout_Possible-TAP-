@@ -1,7 +1,10 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Parallax/Asset/Enemy/Hammer_dude/Shotgun hammer dude-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Parallax/script/Hammer_dude.gd" type="Script" id=2]
+[ext_resource path="res://Audio/SFX/Hammer.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Audio/SFX/Hammer_Charge.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Audio/SFX/Hammer_Beam.mp3" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -245,11 +248,20 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Hammer_anim" type="AnimatedSprite" parent="."]
-scale = Vector2( 5, 5 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
-animation = "Death"
-frame = 9
+animation = "Attack"
+frame = 2
 playing = true
-offset = Vector2( -11, -7 )
+offset = Vector2( -11, -5 )
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Charge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Beam" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="animation_finished" from="Hammer_anim" to="." method="_on_Hammer_anim_animation_finished"]

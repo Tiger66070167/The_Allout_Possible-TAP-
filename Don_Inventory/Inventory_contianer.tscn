@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Don_Inventory/Scene/Inventory_display.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Don_Inventory/Script/le_py.py" type="Script" id=2]
+[ext_resource path="res://Don_Inventory/Scene/Inventory_contianer.gd" type="Script" id=3]
+
+[node name="Inventory_contianer" type="Control"]
+anchor_left = -0.802
+anchor_top = -0.617
+anchor_right = 1.855
+anchor_bottom = 1.918
+margin_left = -0.159912
+margin_top = 0.360046
+margin_right = -0.600342
+margin_bottom = -0.440186
+mouse_filter = 2
+script = ExtResource( 3 )
+
+[node name="le_py" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+script = ExtResource( 2 )
+
+[node name="Inventory_display" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.318
+anchor_top = 0.474
+anchor_right = 0.393
+anchor_bottom = 0.614
+margin_left = -2.11804
+margin_top = -1.33813
+margin_right = 163.307
+margin_bottom = 163.482
+rect_scale = Vector2( 0.7, 0.7 )
