@@ -7,14 +7,14 @@ class Control_panel(Control):
 	
 	def _ready(self):
 		#Fight_scene_path
-		self.Fighting_scene = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene")
+		self.Fighting_scene = self.get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene")
 		
 		#Button node varieble
 		self.start_fight = self.get_node("CenterContainer/VBoxContainer/HBoxContainer/Fight_scene_Button")
 		self.player_atk = self.get_node("CenterContainer/VBoxContainer/HBoxContainer/P_Attack")
 		self.enemy_atk = self.get_node("CenterContainer/VBoxContainer/HBoxContainer/E_Attack")
 		
-		self.command = self.get_node("/root/Parallax_scene/my_godot")
+		self.command = self.get_node("/root/Main/Parallax_scene/my_godot")
 	def _process(self, delta):
 		game_state = str(self.command.get_game_state())
 		if game_state == "Running":

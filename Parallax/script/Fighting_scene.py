@@ -8,13 +8,13 @@ class Fighting_scene(Node2D):
 	def _ready(self):
 		"""Define all value and Path for every here **Discripe on top of the value**"""
 		#Player_path **Not animate sprite**
-		self.player = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Player")
+		self.player = self.get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Player")
 		#Player_ainmate_path
-		self.player_anim = self.get_node("/root/Parallax_scene/Upper_scene/Fighting_scene/Player/Player_anim")
+		self.player_anim = self.get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Player/Player_anim")
 		#Prallax_path
-		self.parallax = self.get_node("/root/Parallax_scene/Upper_scene/ParallaxBackground/")
+		self.parallax = self.get_node("/root/Main/Parallax_scene/Upper_scene/ParallaxBackground/")
 		#Call godot command and change global value
-		self.command = self.get_node("/root/Parallax_scene/my_godot")
+		self.command = self.get_node("/root/Main/Parallax_scene/my_godot")
 		#Velocity for player pos
 		self.enemy_target_pos = {"Fighting":Vector2(1300, 450), "Attack":Vector2(830, 450)}
 		self.player_target_pos = {"Running":Vector2(960, 450), "Fighting":Vector2(650, 450), "Attack":Vector2(1200, 450)}
@@ -106,15 +106,15 @@ class Fighting_scene(Node2D):
 			self.parallax.is_moving(False)
 	def spawn_enemy(self):
 		"""create enemy"""
-		enemy_anim_path = {"Drone":"/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim/", \
-		"Ball_guy":"/root/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/Ball_anim/", \
-		"Hammer_dude":"/root/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/Hammer_anim/"}
-		enemy_path = {"Drone":"/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/", \
-		"Ball_guy":"/root/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/", \
-		"Hammer_dude":"/root/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/"}
+		enemy_anim_path = {"Drone":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim/", \
+		"Ball_guy":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/Ball_anim/", \
+		"Hammer_dude":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/Hammer_anim/"}
+		enemy_path = {"Drone":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Drone/", \
+		"Ball_guy":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/", \
+		"Hammer_dude":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/"}
 		
 		enemy = str(list(self.command.get_enemy_wave())[0])
-		spawner = self.get_node("/root/Parallax_scene/my_godot")
+		spawner = self.get_node("/root/Main/Parallax_scene/my_godot")
 		spawner.spawn()
 		
 		self.another_clock = 0

@@ -7,10 +7,10 @@ func _ready():
 
 func _process(delta):
 	var player_anim = get_node("Player_anim")
-	var enemy_path = {"Drone":"/root/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim/", \
-		"Ball_guy":"/root/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/Ball_anim/", \
-		"Hammer_dude":"/root/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/Hammer_anim/"}
-	if get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").get_child_count() == 2:
+	var enemy_path = {"Drone":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim/", \
+		"Ball_guy":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Ball_guy/Ball_anim/", \
+		"Hammer_dude":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Hammer_dude/Hammer_anim/"}
+	if get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene").get_child_count() == 2:
 		var enemy_anim = ""
 		if len(Globals.enemy_wave) > 1:
 			enemy_anim = get_node(enemy_path[Globals.enemy_wave[0]])
@@ -30,7 +30,7 @@ func _on_Player_anim_animation_finished():
 		Globals.Player_Health -= Globals.Enemy_damage
 		player_anim.play("Idle")
 	if str(player_anim.get_animation()) == "Death":
-		get_node("/root/Parallax_scene/Death_menu").visible = true
+		get_node("/root/Main/Parallax_scene/Death_menu").visible = true
 	if str(player_anim.get_animation()) == "Attack":
 		player_anim.play("Running")
-		get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()
+		get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene").is_done_toggle()

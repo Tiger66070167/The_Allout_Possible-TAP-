@@ -5,7 +5,7 @@ var enemy_path = {"Drone":preload("res://Parallax/Character_scene/Drone.tscn"), 
 				"Ball_guy":preload("res://Parallax/Character_scene/Ball_guy.tscn"), \
 				"Hammer_dude":preload("res://Parallax/Character_scene/Hammer_dude.tscn")}
 var enemy_health = {"Drone":3, "Ball_guy":4, "Hammer_dude":5}
-onready var Fighting_scene = get_node("/root/Parallax_scene/Upper_scene/Fighting_scene")
+onready var Fighting_scene = get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene")
 func _ready():
 	pass
 func spawn(enemy=Globals.enemy_wave[0]):

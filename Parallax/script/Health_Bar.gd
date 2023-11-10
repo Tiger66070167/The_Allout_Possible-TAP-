@@ -8,7 +8,7 @@ func _ready():
 	pass
 func _process(_delta):
 	player_health_update()
-	if get_node("/root/Parallax_scene/Upper_scene/Fighting_scene").get_child_count() == 2:
+	if get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene").get_child_count() == 2:
 		$Enemy_Health_Bar.visible = true
 	else:
 		$Enemy_Health_Bar.visible = false

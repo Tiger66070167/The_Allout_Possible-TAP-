@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The_Allout_Possible-TAP-"
-run/main_scene="res://Don_Inventory/Scene/Inventory_contianer.tscn"
+run/main_scene="res://Main Scene/Main_scene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
