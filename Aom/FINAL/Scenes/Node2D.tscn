@@ -1,0 +1,272 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Slot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Starter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/white_base.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Node2D.py" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 336, 88 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 4 )
+
+[node name="upper" type="Node2D" parent="."]
+
+[node name="Starter1" parent="upper" instance=ExtResource( 2 )]
+
+[node name="Starter2" parent="upper" instance=ExtResource( 2 )]
+position = Vector2( 24, 0 )
+
+[node name="Starter3" parent="upper" instance=ExtResource( 2 )]
+position = Vector2( 48, 0 )
+
+[node name="Starter4" parent="upper" instance=ExtResource( 2 )]
+position = Vector2( 72, 0 )
+
+[node name="Starter5" parent="upper" instance=ExtResource( 2 )]
+position = Vector2( 96, 0 )
+
+[node name="Starter6" parent="upper" instance=ExtResource( 2 )]
+position = Vector2( 120, 0 )
+
+[node name="lower" type="Node2D" parent="."]
+position = Vector2( 0, 168 )
+
+[node name="Starter1" parent="lower" instance=ExtResource( 2 )]
+
+[node name="Starter2" parent="lower" instance=ExtResource( 2 )]
+position = Vector2( 24, 0 )
+
+[node name="Starter3" parent="lower" instance=ExtResource( 2 )]
+position = Vector2( 48, 0 )
+
+[node name="Starter4" parent="lower" instance=ExtResource( 2 )]
+position = Vector2( 72, 0 )
+
+[node name="Starter5" parent="lower" instance=ExtResource( 2 )]
+position = Vector2( 96, 0 )
+
+[node name="Starter6" parent="lower" instance=ExtResource( 2 )]
+position = Vector2( 120, 0 )
+
+[node name="left" type="Node2D" parent="."]
+position = Vector2( -24, 24 )
+
+[node name="Starter1" parent="left" instance=ExtResource( 2 )]
+
+[node name="Starter2" parent="left" instance=ExtResource( 2 )]
+position = Vector2( 0, 24 )
+
+[node name="Starter3" parent="left" instance=ExtResource( 2 )]
+position = Vector2( 0, 48 )
+
+[node name="Starter4" parent="left" instance=ExtResource( 2 )]
+position = Vector2( 0, 72 )
+
+[node name="Starter5" parent="left" instance=ExtResource( 2 )]
+position = Vector2( 0, 96 )
+
+[node name="Starter6" parent="left" instance=ExtResource( 2 )]
+position = Vector2( 0, 120 )
+
+[node name="right" type="Node2D" parent="."]
+position = Vector2( 144, 24 )
+
+[node name="Starter1" parent="right" instance=ExtResource( 2 )]
+
+[node name="Starter2" parent="right" instance=ExtResource( 2 )]
+position = Vector2( 0, 24 )
+
+[node name="Starter3" parent="right" instance=ExtResource( 2 )]
+position = Vector2( 0, 48 )
+
+[node name="Starter4" parent="right" instance=ExtResource( 2 )]
+position = Vector2( 0, 72 )
+
+[node name="Starter5" parent="right" instance=ExtResource( 2 )]
+position = Vector2( 0, 96 )
+
+[node name="Starter6" parent="right" instance=ExtResource( 2 )]
+position = Vector2( 0, 120 )
+
+[node name="Grid" type="Node2D" parent="."]
+
+[node name="Slot1" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 0, 24 )
+
+[node name="Slot2" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 24, 24 )
+
+[node name="Slot3" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 48, 24 )
+
+[node name="Slot4" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 72, 24 )
+
+[node name="Slot5" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 96, 24 )
+
+[node name="Slot6" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 120, 24 )
+
+[node name="Slot7" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 0, 48 )
+
+[node name="Slot8" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 24, 48 )
+
+[node name="Slot9" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 48, 48 )
+
+[node name="Slot10" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 72, 48 )
+
+[node name="Slot11" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 96, 48 )
+
+[node name="Slot12" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 120, 48 )
+
+[node name="Slot13" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 0, 72 )
+
+[node name="Slot14" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 24, 72 )
+
+[node name="Slot15" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 48, 72 )
+
+[node name="Slot16" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 72, 72 )
+
+[node name="Slot17" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 96, 72 )
+
+[node name="Slot18" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 120, 72 )
+
+[node name="Slot19" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 0, 96 )
+
+[node name="Slot20" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 24, 96 )
+
+[node name="Slot21" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 48, 96 )
+
+[node name="Slot22" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 72, 96 )
+
+[node name="Slot23" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 96, 96 )
+
+[node name="Slot24" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 120, 96 )
+
+[node name="Slot25" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 0, 120 )
+
+[node name="Slot26" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 24, 120 )
+
+[node name="Slot27" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 48, 120 )
+
+[node name="Slot28" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 72, 120 )
+
+[node name="Slot29" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 96, 120 )
+
+[node name="Slot30" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 120, 120 )
+
+[node name="Slot31" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 0, 144 )
+
+[node name="Slot32" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 24, 144 )
+
+[node name="Slot33" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 48, 144 )
+
+[node name="Slot34" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 72, 144 )
+
+[node name="Slot35" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 96, 144 )
+
+[node name="Slot36" parent="Grid" instance=ExtResource( 1 )]
+position = Vector2( 120, 144 )
+
+[node name="run_button" type="Button" parent="."]
+margin_left = 232.0
+margin_top = 124.0
+margin_right = 282.0
+margin_bottom = 144.0
+text = "run"
+
+[node name="reset_button" type="Button" parent="."]
+margin_left = 260.0
+margin_top = 160.0
+margin_right = 330.0
+margin_bottom = 180.0
+text = "reset"
+
+[node name="set_button" type="Button" parent="."]
+margin_left = 184.0
+margin_top = 160.0
+margin_right = 254.0
+margin_bottom = 180.0
+text = "set"
+
+[node name="no_function" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="turn_up_button" type="TextureButton" parent="no_function"]
+modulate = Color( 0, 1, 1, 1 )
+margin_left = 240.0
+margin_right = 241.0
+margin_bottom = 1.0
+rect_scale = Vector2( 20, 20 )
+texture_normal = ExtResource( 3 )
+
+[node name="normal_button" type="TextureButton" parent="no_function"]
+margin_left = 240.0
+margin_top = 24.0
+margin_right = 241.0
+margin_bottom = 25.0
+rect_scale = Vector2( 20, 20 )
+texture_normal = ExtResource( 3 )
+
+[node name="turn_down_button" type="TextureButton" parent="no_function"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 240.0
+margin_top = 48.0
+margin_right = 241.0
+margin_bottom = 49.0
+rect_scale = Vector2( 20, 20 )
+texture_normal = ExtResource( 3 )
+
+[node name="turn_left_button" type="TextureButton" parent="no_function"]
+modulate = Color( 1, 0, 1, 1 )
+margin_left = 216.0
+margin_top = 24.0
+margin_right = 217.0
+margin_bottom = 25.0
+rect_scale = Vector2( 20, 20 )
+texture_normal = ExtResource( 3 )
+
+[node name="turn_right_button" type="TextureButton" parent="no_function"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 264.0
+margin_top = 24.0
+margin_right = 265.0
+margin_bottom = 25.0
+rect_scale = Vector2( 20, 20 )
+texture_normal = ExtResource( 3 )
+
+[connection signal="pressed" from="run_button" to="." method="_on_run"]
+[connection signal="pressed" from="reset_button" to="." method="_on_reset"]
+[connection signal="pressed" from="set_button" to="." method="_on_set"]

@@ -16,11 +16,18 @@ class Projectile(Area2D):
 		pass
 	def _process(self, delta):
 		self.isit_start = self.get_parent().get_parent().get_parent().get_parent().is_start
+		side = str(self.get_parent().get_parent().get_name())
 		if self.isit_start:
-			self.move_local_y(delta*SPEED)
+			if side == "Upper":
+				self.move_local_y(delta*SPEED)
+			elif side == "Lower":
+				self.move_local_y(delta*-SPEED)
+			elif side == "Left":
+				self.move_local_x(delta*SPEED)
+			elif side == "Right":
+				self.move_local_x(delta*-SPEED)
 
 	def _on_Projectile_area_entered(self, area):
-		print(area.status)
 		areaname = str(area.status)
 		if self.isit_start:
 			if areaname in ("Empty_Slot", "Shooter") and self.isit_start:
@@ -30,5 +37,5 @@ class Projectile(Area2D):
 				area.texture_change(EMPTY, "Empty_Slot")
 				self.queue_free()
 			elif areaname == "Turn":
-				self.set_position(area.get_position())
-				self.set_rotation_degrees(area.get_rotation_degrees()-90)
+				self.set_rotation_degrees(-area.get_rotation_degrees())
+				
