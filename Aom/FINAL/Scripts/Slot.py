@@ -18,8 +18,7 @@ class Slot(Area2D):
 	mode = export(int, default=2)
 
 	def _ready(self):
-		self.add_to_group("slots")
-		pass
+		self.add_to_group("slots") # set slot to slots group
 	
 	def _process(self, delta):
 		self.texture_update()
@@ -29,20 +28,21 @@ class Slot(Area2D):
 	
 	def texture_update(self):
 		"""update texture upon there mode"""
+		texture_sprite = self.get_node("Sprite")
 		if self.mode != 2:
 			self.set_z_index(2)
 		else:
 			self.set_z_index(0)
 		if self.mode == 2:
-			self.set_modulate(WHITE)
+			texture_sprite.set_self_modulate(WHITE)
 		elif self.mode == 3:
-			self.set_modulate(CYAN)
+			texture_sprite.set_self_modulate(CYAN)
 		elif self.mode == 4:
-			self.set_modulate(BLACK)
+			texture_sprite.set_self_modulate(BLACK)
 		elif self.mode == 5:
-			self.set_modulate(PINK)
+			texture_sprite.set_self_modulate(PINK)
 		elif self.mode == 6:
-			self.set_modulate(YELLOW)
+			texture_sprite.set_self_modulate(YELLOW)
 	
 	def _on_slot_input(self, viewport, event, shapeidx):
 		"""when mouse had event with slot"""
@@ -51,19 +51,3 @@ class Slot(Area2D):
 				self.mode += 1
 			else:
 				self.mode = 2
-	'''
-	def _on_bullet_entered(self, bullet):
-		"""when bullet collide"""
-		if self.mode == 2 or bullet in self.get_children():
-			return
-		new_bullet = NEW_BULLET.instance()
-		if self.mode == 4: # move down
-			new_bullet.movement_y = 1
-		elif self.mode == 3: # move up
-			new_bullet.movement_y = -1
-		elif self.mode == 5: # move left
-			new_bullet.movement_x = -1
-		elif self.mode == 6: # move right
-			new_bullet.movement_x = 1
-		#self.add_child(new_bullet)
-	'''

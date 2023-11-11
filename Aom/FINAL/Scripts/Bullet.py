@@ -9,6 +9,7 @@ class Bullet(Area2D):
 	# member variables here, example:
 	#a = export(int)
 	#b = export(str, default='foo')
+	bullet_hp = export(int, default=4)
 	mode = export(int, default=-2)
 	found_tile = False
 	
@@ -41,10 +42,13 @@ class Bullet(Area2D):
 				self.get_node("/root/").get_child(0).check_enemy() # call check enemy
 				self.queue_free()
 			elif target.mode > 2: # collide with special tile
+				if self.bullet_hp == 0:
+					self.queue_free()
+				self.bullet_hp -= 1
 				global_now = self.get_global_position() # collect global pos
 				
-				self.get_parent().remove_child(self)# remove yourself from parent
-				target.add_child(self)# be child of new parent
+				self.get_parent().call_deferred("remove_child", self)#remove_child(self)# remove yourself from parent
+				target.call_deferred("add_child", self)#add_child(self)# be child of new parent
 				
 				self.set_position(target.to_local(global_now))# set position to reletive with old
 				self.found_tile = True

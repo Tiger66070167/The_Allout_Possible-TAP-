@@ -37,10 +37,11 @@ class Starter(Area2D):
 	
 	def texture_update(self):
 		"""update texture"""
+		texture_sprite = self.get_node("Sprite")
 		if self.mode == 0:
-			self.set_modulate(WHITE)
+			texture_sprite.set_self_modulate(WHITE)
 		elif self.mode == 1:
-			self.set_modulate(GREEN)
+			texture_sprite.set_self_modulate(GREEN)
 		elif self.mode == -1:
-			self.set_modulate(RED)
+			texture_sprite.set_self_modulate(RED)
 	

@@ -18,14 +18,14 @@ class Node2D(Node2D):
 	
 	def _on_set(self):
 		"""when click set"""
-		self.reset_all()
-		self.get_tree().call_group("slots", "tile_edit", True)
-		self.random_starter(self.positive_num, self.negative_num)
+		self.reset_all() # reset all starters slots and bullets
+		self.get_tree().call_group("slots", "tile_edit", True) # activate slots modifine
+		self.random_starter(self.positive_num, self.negative_num) # create starter
 	
 	def _on_run(self):
 		"""when click run"""
-		self.get_tree().call_group("starters", "run_bullets")
-		self.get_tree().call_group("slots", "tile_edit", False)
+		self.get_tree().call_group("starters", "run_bullets") # make bullet run
+		self.get_tree().call_group("slots", "tile_edit", False) # disable slots midifine
 	
 	def random_starter(self, positive, negative):
 		"""genrate random starters"""
