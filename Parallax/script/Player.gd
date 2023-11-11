@@ -2,8 +2,9 @@ extends KinematicBody2D
 # Called when the node enters the scene tree for the first time.
 onready var Target_pos = position
 onready var SPEED = 200
-onready var punch = $AudioStreamPlayer2D
-onready var punch2 = $AudioStreamPlayer2D
+onready var punch_1 = $Punch1
+onready var punch_2 = $Punch2
+
 
 func _ready():
 	pass # Replace with function body.
@@ -17,8 +18,11 @@ func _process(delta):
 		var enemy_anim = ""
 		if len(Globals.enemy_wave) > 1:
 			enemy_anim = get_node(enemy_path[Globals.enemy_wave[0]])
-		if str(player_anim.get_animation()) == "Attack" and player_anim.get_frame() in [1, 8]:
-			punch.play()
+		if str(player_anim.get_animation()) == "Attack" and player_anim.get_frame() in [1, 6]:
+			if player_anim.get_frame() in [1]:
+				punch_1.play()
+			elif  player_anim.get_frame() in [6]:
+				punch_2.play()
 			enemy_anim.play("Damaged")
 		if Globals.Player_Health <= 0:
 			player_anim.play("Death")

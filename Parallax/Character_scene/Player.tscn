@@ -191,10 +191,15 @@ shape = SubResource( 1 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
 animation = "Idle"
+frame = 5
 speed_scale = 2.0
 playing = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Punch1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+volume_db = 1.0
+
+[node name="Punch2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
 volume_db = 1.0
 
