@@ -15,6 +15,8 @@ func update_inventory_display():
 		update_inventory_slot_display(item_index)
 		
 func update_inventory_slot_display(item_index):
+	if item_index < 9:
+		return
 	var item_slot = get_child(item_index-9)
 	var item = inventory.items[item_index]
 	if item_slot != null:

@@ -63,3 +63,5 @@ func new_wave():
 func _process(_delta):
 	if Globals.game_state == "reset":
 		pass
+func toggle_is_fight():
+	Globals.is_fight = not Globals.is_fight

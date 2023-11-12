@@ -3,7 +3,6 @@
 [ext_resource path="res://Don_Inventory/Script/Items.gd" type="Script" id=1]
 
 [sub_resource type="StreamTexture" id=1]
-flags = 4
 load_path = "res://.import/DOWN.png-d3ea3c802aa4d0a8a9d3fe0b8cfb5e7b.stex"
 
 [resource]

@@ -13,3 +13,7 @@ onready var enemy_wave = ["null"]
 onready var diffculty = 0.5
 
 onready var game_wave = 0
+
+onready var is_fight = false
+
+onready var shoot = false

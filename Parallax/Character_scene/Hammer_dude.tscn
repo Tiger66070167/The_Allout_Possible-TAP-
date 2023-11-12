@@ -251,7 +251,7 @@ shape = SubResource( 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Attack"
-frame = 2
+frame = 11
 playing = true
 offset = Vector2( -11, -5 )
 

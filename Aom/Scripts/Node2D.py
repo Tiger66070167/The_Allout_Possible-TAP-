@@ -6,16 +6,20 @@ import random
 @exposed
 class Node2D(Node2D):
 
-	# member variables here, example:
-	# a = export(int)
-	# b = export(str, default='foo')
-	positive_num = export(int, default=3)
-	negative_num = export(int, default=3)
+	def _onready(self):
+		gd_command = self.get_node("gd_command")
+		positive_num = export(int, default=3)
+		negative_num = export(int, self.gd_command.get_enemy_hp())
 	
 	def _on_reset(self):
 		"""when click reset"""
 		self.reset_all() # reset all starters slots and bullets
-	
+		
+	def just_set(self):
+		self.reset_all() # reset all starters slots and bullets
+		self.get_tree().call_group("slots", "tile_edit", True) # activate slots modifine
+		self.random_starter(self.positive_num, self.negative_num) # create starter
+		
 	def _on_set(self):
 		"""when click set"""
 		self.reset_all() # reset all starters slots and bullets
