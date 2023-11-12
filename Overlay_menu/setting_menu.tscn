@@ -41,11 +41,42 @@ margin_bottom = 391.0
 alignment = 1
 
 [node name="CheckButton" type="CheckBox" parent="option/HBoxContainer/VBoxContainer"]
-margin_top = 183.0
+margin_top = 136.0
 margin_right = 102.0
-margin_bottom = 208.0
+margin_bottom = 161.0
 custom_fonts/font = SubResource( 1 )
 text = "Full Screen"
+
+[node name="_" type="Label" parent="option/HBoxContainer/VBoxContainer"]
+margin_top = 165.0
+margin_right = 102.0
+margin_bottom = 179.0
+
+[node name="Master Volume" type="Label" parent="option/HBoxContainer/VBoxContainer"]
+margin_top = 183.0
+margin_right = 102.0
+margin_bottom = 197.0
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="option/HBoxContainer/VBoxContainer"]
+margin_top = 201.0
+margin_right = 102.0
+margin_bottom = 217.0
+min_value = -30.0
+max_value = 20.0
+
+[node name="Musicr Volume" type="Label" parent="option/HBoxContainer/VBoxContainer"]
+margin_top = 221.0
+margin_right = 102.0
+margin_bottom = 235.0
+text = "Music Volume"
+
+[node name="HSlider2" type="HSlider" parent="option/HBoxContainer/VBoxContainer"]
+margin_top = 239.0
+margin_right = 102.0
+margin_bottom = 255.0
+min_value = -30.0
+max_value = 20.0
 
 [node name="exit" type="Button" parent="option"]
 margin_left = 20.0
@@ -56,5 +87,7 @@ custom_fonts/font = SubResource( 2 )
 text = "X"
 
 [connection signal="toggled" from="option/HBoxContainer/VBoxContainer/CheckButton" to="option" method="_on_CheckButton_toggled"]
-[connection signal="pressed" from="option/exit" to="option" method="_on_CheckBox_pressed"]
+[connection signal="value_changed" from="option/HBoxContainer/VBoxContainer/HSlider" to="option" method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="option/HBoxContainer/VBoxContainer/HSlider2" to="option" method="_on_HSlider2_value_changed"]
 [connection signal="pressed" from="option/exit" to="option" method="_on_exit_pressed"]
+[connection signal="pressed" from="option/exit" to="option" method="_on_CheckBox_pressed"]
