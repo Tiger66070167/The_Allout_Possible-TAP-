@@ -3,7 +3,6 @@ extends Control
 
 var is_paused = false setget set_is_paused
 
-
 func _unhandled_input(event):
 	if event.is_action_pressed("ESC"):
 		self.is_paused = !is_paused
@@ -21,6 +20,7 @@ func _on_Resume_Game_pressed():
 
 func _on_Back_to_main_pressed():
 	self.is_paused = false
+	Globals.game_state = "end"
 	get_tree().change_scene("res://Main Scene/Main_Menu.tscn")
 
 

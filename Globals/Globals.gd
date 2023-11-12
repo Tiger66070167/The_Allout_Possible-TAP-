@@ -8,7 +8,7 @@ onready var Enemy_Health = 0
 onready var Enemy_Full_Health = 0
 onready var Enemy_damage = 1
 
-onready var game_state = "Running"
+onready var game_state = ""
 onready var enemy_wave = ["null"]
 onready var diffculty = 0.5
 

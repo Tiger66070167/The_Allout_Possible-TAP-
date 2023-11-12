@@ -1,10 +1,9 @@
 extends Control
-
 func _ready():
-	pass 
-
+	pass
 
 func _on_Start_pressed():
+	Globals.game_state = "start"
 	get_tree().change_scene("res://Main Scene/Game_play.tscn")
 
 

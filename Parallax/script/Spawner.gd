@@ -28,7 +28,7 @@ func get_game_state():
 	
 func set_game_state(state):
 	Globals.game_state = state
-	
+
 func get_hp(entity):
 	if entity == "Player":
 		return Globals.Player_Health
@@ -59,3 +59,6 @@ func set_enemy_wave(enemy, remove = false):
 
 func new_wave():
 	Fighting_scene.randomn_enemy(Globals.diffculty)
+
+func _process(delta):
+	pass

@@ -9,7 +9,6 @@ var item_path_list = {
 	}
 func _ready():
 	pass
-	#$le_py.random_item()
 func can_drop_data(position, data):
 	return data is Dictionary and data.has("item")
 

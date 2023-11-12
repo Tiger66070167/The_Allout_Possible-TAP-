@@ -6,7 +6,9 @@ import random
 class Fighting_scene(Node2D):
 	"""This Function is for controling Fighting scene"""
 	def _ready(self):
-		"""Define all value and Path for every here **Discripe on top of the value**"""
+		self.start_game()
+	
+	def start_game(self):
 		#Player_path **Not animate sprite**
 		self.player = self.get_node("/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Player")
 		#Player_ainmate_path

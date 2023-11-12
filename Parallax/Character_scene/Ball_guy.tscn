@@ -188,6 +188,7 @@ position = Vector2( 0, 2 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 7 )
 animation = "Attack"
+frame = 1
 playing = true
 
 [node name="Swing1" type="AudioStreamPlayer2D" parent="."]
