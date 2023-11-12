@@ -180,13 +180,14 @@ shape = SubResource( 1 )
 scale = Vector2( 3.97112, 3.81542 )
 frames = SubResource( 11 )
 animation = "Attack"
-frame = 11
+frame = 14
 speed_scale = 1.5
 playing = true
 
 [node name="Energy_gun1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
 volume_db = 1.0
+bus = "music"
 
 [node name="Energy_gun2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )

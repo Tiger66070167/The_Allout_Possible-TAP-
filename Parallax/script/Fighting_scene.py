@@ -38,6 +38,8 @@ class Fighting_scene(Node2D):
 		self.clock = 0
 		self.another_clock = 0
 		
+		self.audio_player = self.get_node("/root/Main/Music")
+		self.audio_player.play_music_not_in_battle()
 	def _process(self, delta):
 		player_pos = self.player.get_position()
 		enemy_health = self.command.get_hp("Enemy")
@@ -106,6 +108,8 @@ class Fighting_scene(Node2D):
 			#Set state to all
 			self.player_state = "Fighting"
 			self.parallax.is_moving(False)
+			
+			self.audio_player.play_music_in_battle()
 	def spawn_enemy(self):
 		"""create enemy"""
 		enemy_anim_path = {"Drone":"/root/Main/Parallax_scene/Upper_scene/Fighting_scene/Drone/Drone_anim/", \
@@ -139,7 +143,8 @@ class Fighting_scene(Node2D):
 			self.player_state = "Running"
 			self.player_anim.play("Running")
 			self.player.move_to_position(self.player_target_pos.get("Running"), 400)
-		
+			self.audio_player.play_music_not_in_battle()
+			
 	def player_attack(self, damage=1):
 		self.command.set_damage("player", damage)
 		
