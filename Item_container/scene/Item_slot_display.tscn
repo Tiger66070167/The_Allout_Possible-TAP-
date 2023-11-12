@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Don_Inventory/Asset/EmptyInventorySlot_SMALLEST_clear.png" type="Texture" id=1]
+[ext_resource path="res://Item_container/script/Item_slot_display.gd" type="Script" id=2]
+
+[node name="CenterContainer" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Slot" type="TextureRect" parent="."]
+margin_left = 949.0
+margin_top = 529.0
+margin_right = 970.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 18, 18 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+stretch_mode = 4

@@ -4,7 +4,13 @@ class_name Inventory
 signal item_changed(indexes)
 
 export(Array, Resource) var items = [
-	null, null, null, null, null, null, null, null, null
+	null, null, null, null, null, null, null, null, null, 
+	null, null, null, null, null, null, 
+	null, null, null, null, null, null, 
+	null, null, null, null, null, null, 
+	null, null, null, null, null, null, 
+	null, null, null, null, null, null, 
+	null, null, null, null, null, null, 
 ]
 func set_item(item_index, item):
 	var previous_item = items[item_index]

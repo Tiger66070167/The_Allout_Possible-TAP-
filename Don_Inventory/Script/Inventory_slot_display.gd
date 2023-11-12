@@ -6,8 +6,12 @@ onready var slot = $Slot
 func display_item(item):
 	if item is Item:
 		slot.set_texture(item.texture)
+		slot.rect_min_size = Vector2(0, 0)
+		slot.rect_scale = Vector2(3, 3)
 	else:
-		slot.texture = load("res://Don_Inventory/Asset/EmptyInventorySlot_BIGGERt.png")
+		slot.rect_scale = Vector2(1, 1)
+		slot.rect_min_size = Vector2(180, 180)
+		slot.texture = load("res://Don_Inventory/Asset/EmptyInventorySlot_SMALLEST.png")
 
 func get_drag_data(_position):
 	var item_index = get_index()

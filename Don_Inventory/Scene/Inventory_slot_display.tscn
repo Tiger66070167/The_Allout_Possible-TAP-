@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Don_Inventory/Asset/EmptyInventorySlot_BIGGERt.png" type="Texture" id=1]
+[ext_resource path="res://Don_Inventory/Asset/EmptyInventorySlot_SMALLEST_clear.png" type="Texture" id=1]
 [ext_resource path="res://Don_Inventory/Script/Inventory_slot_display.gd" type="Script" id=2]
 
 [node name="Inventory_slot_display" type="CenterContainer"]
