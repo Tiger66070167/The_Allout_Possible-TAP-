@@ -9,10 +9,10 @@ var item_path_list = {
 	}
 func _ready():
 	pass
-func can_drop_data(position, data):
+func can_drop_data(_position, data):
 	return data is Dictionary and data.has("item")
 
-func drop_data(position, data):
+func drop_data(_position, data):
 	inventory.set_item(data.item_index, data.item)
 	print(inventory.items[data.item_index].name)
 func set_item_but_for_python(item_index, item):

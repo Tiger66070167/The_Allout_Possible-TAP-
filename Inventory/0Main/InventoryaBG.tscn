@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Inventory/inventory/Inventory_container.tscn" type="PackedScene" id=1]
-
-[node name="Main_inv" type="Sprite"]
-
-[node name="Inventory_container" parent="." instance=ExtResource( 1 )]

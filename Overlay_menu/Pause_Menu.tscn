@@ -56,19 +56,19 @@ margin_right = 447.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="Resume Game" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+[node name="Resume_Game" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
 margin_top = 193.0
 margin_right = 447.0
 margin_bottom = 279.0
 custom_fonts/font = SubResource( 1 )
 text = "Resume Game"
 
-[node name="Back to main" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+[node name="Reset_Game" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
 margin_top = 303.0
 margin_right = 447.0
 margin_bottom = 389.0
 custom_fonts/font = SubResource( 1 )
-text = "Back to main"
+text = "Reset Game"
 
 [node name="Quit" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
 margin_top = 413.0
@@ -77,6 +77,6 @@ margin_bottom = 499.0
 custom_fonts/font = SubResource( 1 )
 text = "Quit"
 
-[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Resume Game" to="Pause_Menu" method="_on_Resume_Game_pressed"]
-[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Back to main" to="Pause_Menu" method="_on_Back_to_main_pressed"]
+[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Resume_Game" to="Pause_Menu" method="_on_Resume_Game_pressed"]
+[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Reset_Game" to="Pause_Menu" method="_on_Reset_Game_pressed"]
 [connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Quit" to="Pause_Menu" method="_on_Quit_pressed"]

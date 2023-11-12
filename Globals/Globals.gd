@@ -13,5 +13,3 @@ onready var enemy_wave = ["null"]
 onready var diffculty = 0.5
 
 onready var game_wave = 0
-func _ready():
-	pass

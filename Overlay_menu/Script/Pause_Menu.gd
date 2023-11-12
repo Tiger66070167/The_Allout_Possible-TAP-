@@ -13,18 +13,13 @@ func set_is_paused(value):
 	get_tree().paused = is_paused
 	visible = is_paused
 
-
 func _on_Resume_Game_pressed():
 	self.is_paused = false
 	visible = is_paused
-
-func _on_Back_to_main_pressed():
-	self.is_paused = false
-	Globals.game_state = "end"
-	get_tree().change_scene("res://Main Scene/Main_Menu.tscn")
-
 
 func _on_Quit_pressed():
 	self.is_paused = false
 	get_tree().quit()
 
+func _on_Reset_Game_pressed():
+	pass

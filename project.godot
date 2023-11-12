@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Don_Inventory/Script/Inventory.gd"
 }, {
-"base": "TextureRect",
-"class": "Inventory_Slot",
-"language": "GDScript",
-"path": "res://Inventory/inventory/Invetory_Slot.gd"
-}, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
@@ -26,20 +21,17 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Inventory": "",
-"Inventory_Slot": "",
 "Item": ""
 }
 
 [application]
 
 config/name="The_Allout_Possible-TAP-"
-run/main_scene="res://Overlay_menu/setting_menu.tscn"
+run/main_scene="res://Main Scene/Main_Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-BgmController="*res://Audio/Audio Scripts/BGM Controller.gd"
-GlobalRandom="*res://Inventory/Item/global_random.gd"
 Globals="*res://Globals/Globals.gd"
 
 [display]

@@ -7,7 +7,7 @@ func _ready():
 	inventory.connect("item_changed", self, "_on_item_changed")
 	update_inventory_display()
 
-func _process(delta):
+func _process(_delta):
 	update_inventory_display()
 	
 func update_inventory_display():

@@ -60,5 +60,6 @@ func set_enemy_wave(enemy, remove = false):
 func new_wave():
 	Fighting_scene.randomn_enemy(Globals.diffculty)
 
-func _process(delta):
-	pass
+func _process(_delta):
+	if Globals.game_state == "reset":
+		pass
