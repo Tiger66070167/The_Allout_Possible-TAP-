@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://font/m5x7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Overlay_menu/Script/Pause_Menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Pause_Menu" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="BG" type="ColorRect" parent="Pause_Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.160784, 0.145098, 0.145098, 0.623529 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Pause_Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -249.5
+margin_right = 960.0
+margin_bottom = 249.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_Menu/CenterContainer"]
+margin_left = 736.0
+margin_right = 1183.0
+margin_bottom = 499.0
+custom_constants/separation = 24
+
+[node name="Label" type="Label" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+margin_right = 447.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 2 )
+text = "Paused"
+align = 1
+valign = 1
+
+[node name="_" type="Control" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+margin_top = 119.0
+margin_right = 447.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Resume Game" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+margin_top = 193.0
+margin_right = 447.0
+margin_bottom = 279.0
+custom_fonts/font = SubResource( 1 )
+text = "Resume Game"
+
+[node name="Back to main" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+margin_top = 303.0
+margin_right = 447.0
+margin_bottom = 389.0
+custom_fonts/font = SubResource( 1 )
+text = "Back to main"
+
+[node name="Quit" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+margin_top = 413.0
+margin_right = 447.0
+margin_bottom = 499.0
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+
+[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Resume Game" to="Pause_Menu" method="_on_Resume_Game_pressed"]
+[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Back to main" to="Pause_Menu" method="_on_Back_to_main_pressed"]
+[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Quit" to="Pause_Menu" method="_on_Quit_pressed"]
