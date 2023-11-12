@@ -1,16 +1,13 @@
 extends Control
 
-var open = false setget set_is_open
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ESC"):
-		self.open = false
-
-
-func set_is_open(value):
-	open = value
-	visible = open
-
+		$"..".visible = false
 
 func _on_CheckButton_toggled(button_pressed):
 	OS.window_fullscreen = !OS.window_fullscreen
+
+
+func _on_exit_pressed():
+	$"..".visible = false

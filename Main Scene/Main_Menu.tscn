@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://font/m5x7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Main Scene/script/Main_Menu.gd" type="Script" id=2]
 [ext_resource path="res://Audio/Audio_Scene/Background Music.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Overlay_menu/setting_menu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -54,5 +55,9 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="option" parent="." instance=ExtResource( 4 )]
+visible = false
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_Option_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

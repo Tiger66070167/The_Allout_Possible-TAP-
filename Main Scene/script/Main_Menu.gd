@@ -10,3 +10,7 @@ func _on_Quit_pressed():
 
 func _ready():
 	$Music.main_menu()
+
+
+func _on_Option_pressed():
+	 $option.visible = true
