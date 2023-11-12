@@ -1,6 +1,4 @@
 extends Control
-func _ready():
-	pass
 
 func _on_Start_pressed():
 	Globals.game_state = "start"

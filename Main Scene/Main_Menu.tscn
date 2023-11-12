@@ -24,6 +24,7 @@ alignment = 1
 margin_top = 95.0
 margin_right = 506.0
 margin_bottom = 181.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Start"
 __meta__ = {

@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The_Allout_Possible-TAP-"
-run/main_scene="res://Main Scene/Main_Menu.tscn"
+run/main_scene="res://Overlay_menu/setting_menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
