@@ -19,7 +19,7 @@ class Slot(Area2D):
 
 	def _ready(self):
 		self.add_to_group("slots") # set slot to slots group
-	
+		
 	def _process(self, delta):
 		self.texture_update()
 	
@@ -33,16 +33,16 @@ class Slot(Area2D):
 			self.set_z_index(2)
 		else:
 			self.set_z_index(0)
-		if self.mode == 2:
+		"""if self.mode == 2:
 			texture_sprite.set_self_modulate(WHITE)
 		elif self.mode == 3:
-			texture_sprite.set_self_modulate(CYAN)
+			texture_sprite.set_self_modulate(CYAN)#UP
 		elif self.mode == 4:
-			texture_sprite.set_self_modulate(BLACK)
+			texture_sprite.set_self_modulate(BLACK)#DOWN
 		elif self.mode == 5:
-			texture_sprite.set_self_modulate(PINK)
+			texture_sprite.set_self_modulate(PINK)#LEFT
 		elif self.mode == 6:
-			texture_sprite.set_self_modulate(YELLOW)
+			texture_sprite.set_self_modulate(YELLOW)#RIGHT"""
 	
 	def _on_slot_input(self, viewport, event, shapeidx):
 		"""when mouse had event with slot"""

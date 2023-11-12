@@ -17,3 +17,6 @@ onready var game_wave = 0
 onready var is_fight = false
 
 onready var shoot = false
+onready var just_set = false
+
+onready var is_shoot = false

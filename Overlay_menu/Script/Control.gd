@@ -5,7 +5,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ESC"):
 		$"..".visible = false
 
-func _on_CheckButton_toggled(button_pressed):
+func _on_CheckButton_toggled(_button_pressed):
 	OS.window_fullscreen = !OS.window_fullscreen
 
 

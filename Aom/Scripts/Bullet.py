@@ -21,7 +21,7 @@ class Bullet(Area2D):
 		Initialization here.
 		"""
 		self.add_to_group("bullets")
-		pass
+		self.command = self.get_node("/root/Main/CanvasLayer/Node2D/gd_command")
 
 	def _process(self, delta):
 		delta_speed = delta*BULLET_SPEED # bullet_delta_speed
@@ -36,13 +36,16 @@ class Bullet(Area2D):
 		"""when bullet collide with other area"""
 		if self not in target.get_children():# collide with other
 			if target.mode in (0, 1): # collid with starter or empty starter
+				self.command.bullet_update()
 				self.queue_free()
 			elif target.mode == -1: # collide with negative 
+				self.command.bullet_update()
 				target.mode = 0 # set negative to empty
 				#self.get_node("/root/").get_child(0).check_enemy() # call check enemy
 				self.queue_free()
 			elif target.mode > 2: # collide with special tile
 				if self.bullet_hp == 0:
+					self.command.bullet_update()
 					self.queue_free()
 				self.bullet_hp -= 1
 				global_now = self.get_global_position() # collect global pos

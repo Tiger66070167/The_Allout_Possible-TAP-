@@ -19,4 +19,4 @@ class Control_panel(Control):
 		self.Fighting_scene.is_done_toggle()
 		self.command.new_wave()
 		self.start_fight.visible = False
-		self.command.toggle_is_fight()
+		self.command.toggle_is_game()
