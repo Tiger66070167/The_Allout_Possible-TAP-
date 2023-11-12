@@ -27,11 +27,18 @@ script = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="option"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -14.0
+margin_bottom = 1.0
 color = Color( 0.196078, 0.188235, 0.223529, 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="option"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -692.5
+margin_top = -400.5
+margin_right = -692.5
+margin_bottom = -400.5
+rect_scale = Vector2( 3, 3 )
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="option/HBoxContainer"]
@@ -62,8 +69,8 @@ text = "Master Volume"
 margin_top = 201.0
 margin_right = 102.0
 margin_bottom = 217.0
-min_value = -30.0
-max_value = 20.0
+min_value = -3.0
+max_value = 8.0
 
 [node name="Musicr Volume" type="Label" parent="option/HBoxContainer/VBoxContainer"]
 margin_top = 221.0
@@ -75,8 +82,8 @@ text = "Music Volume"
 margin_top = 239.0
 margin_right = 102.0
 margin_bottom = 255.0
-min_value = -30.0
-max_value = 20.0
+min_value = -3.0
+max_value = 8.0
 
 [node name="exit" type="Button" parent="option"]
 margin_left = 20.0
@@ -89,5 +96,5 @@ text = "X"
 [connection signal="toggled" from="option/HBoxContainer/VBoxContainer/CheckButton" to="option" method="_on_CheckButton_toggled"]
 [connection signal="value_changed" from="option/HBoxContainer/VBoxContainer/HSlider" to="option" method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="option/HBoxContainer/VBoxContainer/HSlider2" to="option" method="_on_HSlider2_value_changed"]
-[connection signal="pressed" from="option/exit" to="option" method="_on_exit_pressed"]
 [connection signal="pressed" from="option/exit" to="option" method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="option/exit" to="option" method="_on_exit_pressed"]
