@@ -1,7 +1,7 @@
 from godot import exposed, export
 from godot import *
 
-BULLET_SPEED = 50
+BULLET_SPEED = 150
 
 @exposed
 class Bullet(Area2D):

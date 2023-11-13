@@ -24,7 +24,7 @@ func bullet_update():
 
 func get_damage():
 	var tile_left = node2d.check_enemy()
-	var enemy_health = Globals.Enemy_Full_Health
+	var enemy_health = Globals.Enemy_Health
 	return abs(tile_left-enemy_health)
 
 func _process(_delta):
