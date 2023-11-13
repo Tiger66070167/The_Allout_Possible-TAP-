@@ -97,5 +97,5 @@ text = "X"
 [connection signal="toggled" from="option/HBoxContainer/VBoxContainer/CheckButton" to="option" method="_on_CheckButton_toggled"]
 [connection signal="value_changed" from="option/HBoxContainer/VBoxContainer/HSlider" to="option" method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="option/HBoxContainer/VBoxContainer/HSlider2" to="option" method="_on_HSlider2_value_changed"]
-[connection signal="pressed" from="option/exit" to="option" method="_on_CheckBox_pressed"]
 [connection signal="pressed" from="option/exit" to="option" method="_on_exit_pressed"]
+[connection signal="pressed" from="option/exit" to="option" method="_on_CheckBox_pressed"]

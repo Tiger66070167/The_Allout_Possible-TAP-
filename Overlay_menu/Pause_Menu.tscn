@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://font/m5x7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Overlay_menu/Script/Pause_Menu.gd" type="Script" id=2]
@@ -8,6 +8,10 @@ size = 120
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 100
 font_data = ExtResource( 1 )
 
@@ -39,7 +43,7 @@ margin_bottom = 249.5
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause_Menu/CenterContainer"]
 margin_left = 736.0
 margin_right = 1183.0
-margin_bottom = 499.0
+margin_bottom = 609.0
 custom_constants/separation = 24
 
 [node name="Label" type="Label" parent="Pause_Menu/CenterContainer/VBoxContainer"]
@@ -70,13 +74,21 @@ margin_bottom = 389.0
 custom_fonts/font = SubResource( 1 )
 text = "Reset Game"
 
-[node name="Quit" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+[node name="option" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
 margin_top = 413.0
 margin_right = 447.0
 margin_bottom = 499.0
+custom_fonts/font = SubResource( 3 )
+text = "Option"
+
+[node name="Quit" type="Button" parent="Pause_Menu/CenterContainer/VBoxContainer"]
+margin_top = 523.0
+margin_right = 447.0
+margin_bottom = 609.0
 custom_fonts/font = SubResource( 1 )
 text = "Quit"
 
 [connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Resume_Game" to="Pause_Menu" method="_on_Resume_Game_pressed"]
 [connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Reset_Game" to="Pause_Menu" method="_on_Reset_Game_pressed"]
+[connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/option" to="Pause_Menu" method="_on_option_pressed"]
 [connection signal="pressed" from="Pause_Menu/CenterContainer/VBoxContainer/Quit" to="Pause_Menu" method="_on_Quit_pressed"]

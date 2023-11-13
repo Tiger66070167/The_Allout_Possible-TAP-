@@ -23,3 +23,7 @@ func _on_Quit_pressed():
 
 func _on_Reset_Game_pressed():
 	pass
+
+
+func _on_option_pressed():
+	get_node("/root/Main/option").visible = true
