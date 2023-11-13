@@ -35,7 +35,7 @@ func _process(_delta):
 		high_way.attack("player")
 		shooted_bullet = 0
 func e_atk():
-	if Globals.Enemy_Full_Health != Globals.Enemy_Health:
+	if node2d.check_enemy():
 		high_way.attack("enemy")
 	else:
 		shoot_toggle()

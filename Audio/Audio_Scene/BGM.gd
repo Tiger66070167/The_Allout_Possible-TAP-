@@ -24,4 +24,4 @@ func reset_volume():
 
 
 func _on_BGM_finished():
-	print($BGM.get_stream_playback)
+	pass

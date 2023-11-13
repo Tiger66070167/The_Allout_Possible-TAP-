@@ -14,5 +14,6 @@ func can_drop_data(_position, data):
 
 func drop_data(_position, data):
 	inventory.set_item(data.item_index, data.item)
+
 func set_item_but_for_python(item_index, item):
 	inventory.set_item(item_index, item_path_list[item])
