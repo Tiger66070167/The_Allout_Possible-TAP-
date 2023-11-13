@@ -7,8 +7,10 @@ onready	var player_anim = get_node("/root/Main/Parallax_scene/Upper_scene/Fighti
 onready var swing_1 = $Swing1
 onready var swing_2 = $Swing2
 
+var high_way = preload("res://Main Scene/resource/new_resource.tres")
+
 func _ready():
-	pass # Replace with function body.
+	high_way.just_set()
 
 func _process(delta):
 	if str(ball_anim.get_animation()) == "Attack":

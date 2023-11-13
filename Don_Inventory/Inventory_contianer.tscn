@@ -17,7 +17,6 @@ mouse_filter = 2
 script = ExtResource( 3 )
 
 [node name="le_py" type="Control" parent="."]
-visible = false
 mouse_filter = 2
 script = ExtResource( 2 )
 

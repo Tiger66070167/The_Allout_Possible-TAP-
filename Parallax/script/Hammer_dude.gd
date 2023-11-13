@@ -8,8 +8,10 @@ onready var hammer_hit_sound = $Hit
 onready var hammer_charge_sound = $Charge
 onready var beam_sound = $Beam
 
+var high_way = preload("res://Main Scene/resource/new_resource.tres")
+
 func _ready():
-	pass # Replace with function body.
+	high_way.just_set()
 
 func _process(delta):
 	if str(hammer_anim.get_animation()) == "Attack":

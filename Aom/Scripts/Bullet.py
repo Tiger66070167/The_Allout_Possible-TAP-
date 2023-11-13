@@ -39,9 +39,9 @@ class Bullet(Area2D):
 				self.command.bullet_update()
 				self.queue_free()
 			elif target.mode == -1: # collide with negative 
-				self.command.bullet_update()
 				target.mode = 0 # set negative to empty
 				#self.get_node("/root/").get_child(0).check_enemy() # call check enemy
+				self.command.bullet_update()
 				self.queue_free()
 			elif target.mode > 2: # collide with special tile
 				if self.bullet_hp == 0:

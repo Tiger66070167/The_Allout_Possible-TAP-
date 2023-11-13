@@ -13,9 +13,9 @@ func spawn(enemy=Globals.enemy_wave[0]):
 	if str(enemy) == "null":
 		pass
 	else:
-		Fighting_scene.add_child(enemy_path[enemy].instance())
 		Globals.Enemy_Health = enemy_health[enemy]
 		Globals.Enemy_Full_Health = enemy_health[enemy]
+		Fighting_scene.add_child(enemy_path[enemy].instance())
 		Globals.diffculty += 0.2
 func get_player_hp():
 	return Globals.Player_Health

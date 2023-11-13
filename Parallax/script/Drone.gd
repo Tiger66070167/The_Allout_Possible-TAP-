@@ -8,9 +8,10 @@ onready var energy_gun_1 = $Energy_gun1
 onready var energy_gun_2 = $Energy_gun2
 onready var get_hit = $get_hit
 
+var high_way = preload("res://Main Scene/resource/new_resource.tres")
 
 func _ready():
-	pass # Replace with function body.
+	high_way.just_set()
 
 func _process(delta):
 	if str(drone_anim.get_animation()) == "Attack":

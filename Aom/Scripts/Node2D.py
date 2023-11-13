@@ -3,14 +3,18 @@ from godot import *
 import random
 
 inventory = ResourceLoader.load("res://Don_Inventory/Resource/Inventory.tres")
+high_way = ResourceLoader.load("res://Main Scene/resource/new_resource.tres")
 @exposed
 class Node2D(Node2D):
 
 	positive_num = export(int, default=3)
 	negative_num = export(int, default=3)
 	def _ready(self):
+		high_way.connect("set", self, "_on_set")
+		high_way.connect("set", self, "_on_set")
 		self.gd_command = self.get_node("gd_command")
 		self.locker = self.get_node("CanvasLayer/Locker")
+		
 	def _on_reset(self):
 		"""when click reset"""
 		self.reset_all() # reset all starters slots and bullets
@@ -23,13 +27,15 @@ class Node2D(Node2D):
 	
 	def _on_run(self):
 		"""when click run"""
+		self.gd_command.shoot_toggle()
 		self.item_update()
-		self.locker.visible = True
 		self.get_tree().call_group("starters", "run_bullets") # make bullet run
 		self.get_tree().call_group("slots", "tile_edit", False) # disable slots midifine
 	
 	def random_starter(self, positive, negative):
 		"""genrate random starters"""
+		positive = high_way.get_enemy_hp()
+		negative = high_way.get_enemy_hp()
 		positive = 12 if positive > 12 else positive# limit
 		negative = 12 if negative > 12 else negative
 		
@@ -54,11 +60,13 @@ class Node2D(Node2D):
 
 	def check_enemy(self):
 		"""check enemy"""
+		enemy_left = 0
 		for side in range(4):
 			for slot in range(6):
 				if self.get_child(side).get_child(slot).mode == -1:
-					return
-		self.reset_all()
+					enemy_left += 1
+		return enemy_left
+
 	def item_update(self):
 		for item_index in range(36):
 			if inventory.items[item_index+9]:
@@ -71,8 +79,5 @@ class Node2D(Node2D):
 					self.get_node("Grid").get_child(item_index).mode = 5
 				elif item == "RIGHT":
 					self.get_node("Grid").get_child(item_index).mode = 6
-	def _process(self, delta):
-		just_set = self.gd_command.get_just_set()
-		if just_set != False:
-			self._on_set()
-			self.gd_command.toggle_just_set()
+			else:
+				self.get_node("Grid").get_child(item_index).mode = 2

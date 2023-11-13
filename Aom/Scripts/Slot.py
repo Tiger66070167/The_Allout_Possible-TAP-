@@ -30,12 +30,12 @@ class Slot(Area2D):
 		"""update texture upon there mode"""
 		texture_sprite = self.get_node("Sprite")
 		if self.mode != 2:
-			self.set_z_index(2)
+			self.set_z_index(0)
 		else:
 			self.set_z_index(0)
-		"""if self.mode == 2:
+		if self.mode == 2:
 			texture_sprite.set_self_modulate(WHITE)
-		elif self.mode == 3:
+		"""elif self.mode == 3:
 			texture_sprite.set_self_modulate(CYAN)#UP
 		elif self.mode == 4:
 			texture_sprite.set_self_modulate(BLACK)#DOWN

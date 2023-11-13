@@ -5,7 +5,7 @@ onready var SPEED = 200
 onready var punch_1 = $Punch1
 onready var punch_2 = $Punch2
 
-
+var high_way = preload("res://Main Scene/resource/new_resource.tres")
 func _ready():
 	pass # Replace with function body.
 

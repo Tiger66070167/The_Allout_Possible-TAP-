@@ -2,10 +2,13 @@ from godot import exposed, export
 from godot import *
 import random
 
+high_way = ResourceLoader.load("res://Main Scene/resource/new_resource.tres")
 @exposed
 class Fighting_scene(Node2D):
 	"""This Function is for controling Fighting scene"""
 	def _ready(self):
+		high_way.connect("player_atk", self, "player_attack")
+		high_way.connect("enemy_atk", self, "enemy_attack")
 		self.start_game()
 	
 	def start_game(self):
@@ -16,7 +19,9 @@ class Fighting_scene(Node2D):
 		#Prallax_path
 		self.parallax = self.get_node("/root/Main/Parallax_scene/Upper_scene/ParallaxBackground/")
 		#Call godot command and change global value
+		self.fight_button = self.get_node("/root/Main/Parallax_scene/Lower_scene/Control_panel/CenterContainer/VBoxContainer/HBoxContainer/CanvasLayer/Start_fight")
 		self.command = self.get_node("/root/Main/Parallax_scene/my_godot")
+		self.game_play_command = self.get_node("/root/Main/CanvasLayer/Node2D/gd_command")
 		#Velocity for player pos
 		self.enemy_target_pos = {"Fighting":Vector2(1300, 450), "Attack":Vector2(830, 450)}
 		self.player_target_pos = {"Running":Vector2(960, 450), "Fighting":Vector2(650, 450), "Attack":Vector2(1200, 450)}
@@ -50,6 +55,8 @@ class Fighting_scene(Node2D):
 			if enemy_health <= 0:
 				self.kill_enemy()
 			if enemy_pos == self.enemy_target_pos.get("Fighting") and self.enemy_state == "Fighting" and self.another_clock == 0:
+				if high_way.get_my_yield() == 1:
+					high_way.attacked("enemy")
 				self.enemy_anim.flip_h = True
 				self.enemy_anim.play("Idle")
 				self.another_clock = 1
@@ -62,12 +69,15 @@ class Fighting_scene(Node2D):
 					self.is_done = False
 					self.enemy_state = "Fighting"
 					self.another_clock = 0
+					high_way.attacked("enemy")
 		elif player_pos == self.player_target_pos.get("Fighting") and self.get_child_count() != 2:
 			self.command.set_game_state("Waiting")
 		elif player_pos == self.player_target_pos.get("Running"):
 			self.command.set_game_state("Running")
 		#Player Condition
 		if player_pos == self.player_target_pos.get("Fighting") and self.player_state == "Fighting" and self.clock == 0:
+			if high_way.get_my_yield() == 1:
+				high_way.attacked("player")
 			self.player_anim.flip_h = False
 			self.player_anim.play("Idle")
 			self.clock = 1
@@ -75,14 +85,15 @@ class Fighting_scene(Node2D):
 				self.command.set_enemy_wave("-", True)
 				self.is_done_toggle()
 		elif player_pos == self.player_target_pos.get("Attack") and self.player_state == "Attacking" and self.clock == 0:
-			if not self.is_done:
+			if self.is_done == False:
 				self.player_anim.play("Attack")
-			if self.is_done:
+			elif self.is_done:
 				self.player_anim.flip_h = True
 				self.player.move_to_position(self.player_target_pos.get("Fighting"), 600)
 				self.player_state = "Fighting"
 				self.is_done = False
 				self.clock = 0
+				high_way.attacked("player")
 		elif player_pos == self.player_target_pos.get("Running") and self.player_state == "Running":
 			self.parallax.is_moving(True)
 		if len(self.command.get_enemy_wave()) == 1:
@@ -138,6 +149,8 @@ class Fighting_scene(Node2D):
 		if self.fighting_state == True:
 			self.fighting_state = False
 			
+			self.fight_button.visible = True
+			self.game_play_command.shoot_toggle()
 			self.clock = 0
 			self.another_clock = 0
 			self.player_state = "Running"
@@ -146,18 +159,22 @@ class Fighting_scene(Node2D):
 			self.audio_player.play_music_not_in_battle()
 			
 	def player_attack(self, damage=1):
-		self.command.set_damage("player", damage)
-		
-		self.move_child(self.enemy, 1)
-		self.move_child(self.player, 2)
-		self.player.move_to_position(self.player_target_pos.get("Attack"), 600)
-		self.player_anim.play("Running")
-		self.player_state = "Attacking"
-		self.clock = 0
-		self.another_clock = 0
-		
+		damage = self.game_play_command.get_damage()/2
+		if damage > 0:
+			self.command.set_damage("player", damage)
+			self.move_child(self.enemy, 1)
+			self.move_child(self.player, 2)
+			self.player.move_to_position(self.player_target_pos.get("Attack"), 600)
+			self.player_anim.play("Running")
+			self.player_state = "Attacking"
+			self.is_done = False
+			self.clock = 0
+			self.another_clock = 0
+		else:
+			high_way.attacked("player")
+			high_way.attacked("player")
 	def enemy_attack(self, damage=1):
-		self.command.set_damage("enemy", damage)
+		self.command.set_damage("enemy", 0.5)
 		
 		self.move_child(self.player, 1)
 		self.move_child(self.enemy, 2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Don_Inventory/Inventory_contianer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Parallax/Parallax_scene.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://Audio/Audio_Scene/Background Music.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Aom/Scenes/Node2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Item_container/Item_container.tscn" type="PackedScene" id=7]
+[ext_resource path="res://font/m5x7.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+use_filter = true
+font_data = ExtResource( 8 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -26,6 +32,10 @@ position = Vector2( 656.659, 590.519 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Inventory_contianer" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 15.8398
+margin_top = 32.3599
+margin_right = 15.3994
+margin_bottom = 31.5598
 mouse_filter = 0
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 7 )]
@@ -34,4 +44,16 @@ margin_top = 624.0
 margin_right = -935.0
 margin_bottom = -103.0
 
+[node name="Reset_button" type="Button" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1061.0
+margin_top = 868.0
+margin_right = -670.0
+margin_bottom = -119.0
+custom_fonts/font = SubResource( 1 )
+text = "Reset item"
+
 [node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="CanvasLayer/Reset_button" to="." method="_on_Reset_button_pressed"]
