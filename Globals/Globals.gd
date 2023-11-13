@@ -20,3 +20,6 @@ onready var shoot = false
 onready var just_set = false
 
 onready var is_shoot = false
+
+var kill_count = 0
+var reset_count = 0

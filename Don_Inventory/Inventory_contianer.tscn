@@ -22,11 +22,11 @@ script = ExtResource( 2 )
 
 [node name="Inventory_display" parent="." instance=ExtResource( 1 )]
 anchor_left = 0.318
-anchor_top = 0.474
-anchor_right = 0.393
-anchor_bottom = 0.614
-margin_left = -2.11804
-margin_top = -1.33813
-margin_right = 163.307
-margin_bottom = 163.482
+anchor_top = 0.469
+anchor_right = 0.392
+anchor_bottom = 0.609
+margin_left = -12.1178
+margin_top = -24.653
+margin_right = 158.408
+margin_bottom = 140.167
 rect_scale = Vector2( 0.7, 0.7 )

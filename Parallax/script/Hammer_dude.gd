@@ -31,6 +31,7 @@ func move_to_position(to_position, with_speed=200):
 
 func _on_Hammer_anim_animation_finished():
 	if str(hammer_anim.get_animation()) == "Death":
+		Globals.kill_count += 1
 		queue_free()
 	elif str(hammer_anim.get_animation()) == "Attack":
 		hammer_anim.play("Running")

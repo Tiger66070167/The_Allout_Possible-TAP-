@@ -233,7 +233,12 @@ script = ExtResource( 7 )
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Locker"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 0, 0, 0.243137 )
+margin_left = 35.0
+margin_top = 36.0
+margin_right = -35.0
+margin_bottom = -36.0
+mouse_default_cursor_shape = 8
+color = Color( 1, 0, 0, 0 )
 script = ExtResource( 7 )
 
 [node name="reset_button" type="Button" parent="."]

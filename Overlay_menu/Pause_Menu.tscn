@@ -43,7 +43,7 @@ margin_bottom = 249.5
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause_Menu/CenterContainer"]
 margin_left = 736.0
 margin_right = 1183.0
-margin_bottom = 609.0
+margin_bottom = 499.0
 custom_constants/separation = 24
 
 [node name="Label" type="Label" parent="Pause_Menu/CenterContainer/VBoxContainer"]

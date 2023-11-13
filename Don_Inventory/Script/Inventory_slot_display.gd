@@ -11,7 +11,7 @@ func display_item(item):
 	else:
 		slot.rect_scale = Vector2(1, 1)
 		slot.rect_min_size = Vector2(180, 180)
-		slot.texture = load("res://Don_Inventory/Asset/EmptyInventorySlot_SMALLEST.png")
+		slot.texture = load("res://Don_Inventory/Asset/EmptyInventorySlot_SMALLEST_clear.png")
 
 func get_drag_data(_position):
 	var item_index = get_index()

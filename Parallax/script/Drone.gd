@@ -29,6 +29,7 @@ func move_to_position(to_position, with_speed=200):
 
 func _on_Drone_anim_animation_finished():
 	if str(drone_anim.get_animation()) == "Death":
+		Globals.kill_count += 1
 		queue_free()
 	elif str(drone_anim.get_animation()) == "Attack":
 		drone_anim.play("Running")

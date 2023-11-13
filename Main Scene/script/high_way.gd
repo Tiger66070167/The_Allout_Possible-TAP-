@@ -10,9 +10,6 @@ signal player_atked()
 signal enemy_atk()
 signal enemy_atked()
 
-signal p_anim_done(damage)
-signal n_anim_done(damage)
-
 signal get_enemy_left()
 var my_yield = 0
 
